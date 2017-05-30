@@ -1,0 +1,194 @@
+@font-face {
+	font-family: "woodstamp";
+	src: url(./font/Woodstamp.otf) format("truetype");
+}
+
+body {
+	font-family: woodstamp;
+	padding: 0;
+	margin: 0;
+}
+
+.ds {
+  width: 620px;
+padding: 5px;
+margin: 5px;
+border: 1px solid black;
+height: 340px;
+overflow: hidden;
+    background-image: url(../img/background.jpg);
+}
+
+.ds .menu {
+	height: 30px;
+border-bottom: 1px solid black;
+margin-bottom: 5px;
+width: 100%;
+}
+
+.ds .menu  > DIV {
+float: left;
+margin-left: 10px;
+cursor: pointer;
+}
+
+#overlay {
+position: relative;
+width: 620px;
+height: 275px;
+margin: 0;
+padding: 0;
+vertical-align: top;
+display: inline-block;
+overflow-y: scroll;
+overflow-x: hidden;
+}
+
+.inventory {
+    float: left;
+}
+.inputtofind {
+	margin-bottom: 10px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+DIV.metawerte {
+	display: none;
+}
+
+DIV#attribute {
+	float:left;
+	width: 600px;
+	padding-left: 40px;
+}
+
+DIV#attribute .inputtofind {   
+	width: 60px;
+	text-transform: uppercase;
+	text-align: center;
+	float: left;
+
+}
+
+DIV#attribute .inputtofind  INPUT {
+	width: 50px;
+	height: 40px;
+	text-align:center;
+	border: 0;
+	margin:0;
+	font-size: 30px;
+	font-family: woodstamp;
+	background: transparent;
+	margin-bottom: 6px;
+}
+
+DIV#grundwerte .hauptwerte, DIV#grundwerte .attributswerte {
+	display: inline-block;
+}
+
+DIV#grundwerte .hauptwerte > DIV {
+	float: left;
+	width: 180px;
+	font-size: 50px;
+	vertical-align: middle;
+	padding-right: 20px;
+	text-align: center;
+}
+
+DIV#grundwerte .attributswerte > DIV {
+	float: left;
+	width: 180px;
+	font-size: 30px;
+	vertical-align: middle;
+	padding-right: 20px;
+	text-align: center;
+}
+
+DIV#grundwerte  INPUT {
+	width: 60px;
+	height: 40px;
+	text-align:center;
+	border: 0;
+	margin:0;
+	font-size: 40px;
+	font-family: woodstamp;
+	border: 4px solid black;
+	float: right;
+	background: transparent;
+}
+
+DIV#grundwerte .attributswerte {
+	width: 640px;
+}
+
+DIV#grundwerte .attributswerte INPUT {
+	width: 66px;
+	height: 40px;
+	text-align:center;
+	border: 0;
+	margin:0;
+	font-size: 40px;
+	font-family: woodstamp;
+	border: 1px solid black;
+	float: right;
+	background: transparent;
+}
+
+DIV#attribute .inputtofind  SPAN {
+	display: inline-block;
+	font-size: 8px;
+	font-family: Georgia;
+}
+
+DIV#attribute > DIV {
+	 background-size: 60px 60px;
+    background-repeat: no-repeat;
+	background-position: 1px -7px;
+}
+
+DIV#attribute #ds_i_lebenskraft {
+	background-image: url(../img/lebenskraft.png);
+}
+DIV#attribute #ds_i_abwehr {
+	background-image: url(../img/abwehr.png);
+}
+DIV#attribute #ds_i_initiative {
+	background-image: url(../img/initiative.png);
+}
+DIV#attribute #ds_i_laufen {
+	background-image: url(../img/laufen.png);
+}
+DIV#attribute #ds_i_abwehr {
+	background-image: url(../img/abwehr.png);
+}
+DIV#attribute #ds_i_schlagen {
+	background-image: url(../img/schlagen.png);
+}
+DIV#attribute #ds_i_schiessen {
+	background-image: url(../img/schiessen.png);
+}
+DIV#attribute #ds_i_zaubern {
+	background-image: url(../img/zaubern.png);
+}
+DIV#attribute #ds_i_zielzauber {
+	background-image: url(../img/zielzauber.png);
+}
+DIV#attribute #ds_i_mana {
+	background-image: url(../img/mana.png);
+}
+
+DIV#waffen {
+	float: left;
+}
+
+.outline {
+	color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
