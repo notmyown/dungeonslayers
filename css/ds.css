@@ -10,43 +10,74 @@ body {
 }
 
 .ds {
-  width: 620px;
-padding: 5px;
-margin: 5px;
-border: 1px solid black;
-height: 340px;
-overflow: hidden;
-    background-image: url(../img/background.jpg);
+	width: 620px;
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid black;
+	height: 340px;
+	overflow: hidden;
+	background-image: url(../img/background.jpg);
 }
 
 .ds .menu {
 	height: 30px;
-border-bottom: 1px solid black;
-margin-bottom: 5px;
-width: 100%;
+	border-bottom: 1px solid black;
+	margin-bottom: 5px;
+	width: 100%;
 }
 
-.ds .menu  > DIV {
-float: left;
-margin-left: 10px;
-cursor: pointer;
+.ds .menu>DIV {
+	float: left;
+	margin-left: 10px;
+	cursor: pointer;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+}
+
+#m_file {
+  background-image: url(../img/menu_datei.png);
+}
+#m_werte {
+	background-image: url(../img/menu_werte.png);
+}
+#m_waffen {
+  background-image: url(../img/menu_waffen.png);
+}
+#m_defense {
+  background-image: url(../img/menu_defense.png);
+}
+#m_spells {
+  background-image: url(../img/menu_zauber.png);
+}
+#m_talents {
+  background-image: url(../img/menu_talent.png);
+}
+#m_probs {
+  background-image: url(../img/menu_proben.png);
+}
+#m_gold {
+  background-image: url(../img/menu_gold.png);
 }
 
 #overlay {
-position: relative;
-width: 620px;
-height: 275px;
-margin: 0;
-padding: 0;
-vertical-align: top;
-display: inline-block;
-overflow-y: scroll;
-overflow-x: hidden;
+	position: relative;
+	width: 620px;
+	height: 275px;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+	display: inline-block;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .inventory {
-    float: left;
+	float: left;
 }
+
 .inputtofind {
 	margin-bottom: 10px;
 }
@@ -55,30 +86,37 @@ overflow-x: hidden;
 	display: none !important;
 }
 
+#overlay > DIV {
+	width: 100%;
+}
+
 DIV.metawerte {
 	display: none;
 }
 
+#werte .focus{
+	color: red;
+}
+
 DIV#attribute {
-	float:left;
+	float: left;
 	width: 600px;
 	padding-left: 40px;
 }
 
-DIV#attribute .inputtofind {   
+DIV#attribute .inputtofind {
 	width: 60px;
 	text-transform: uppercase;
 	text-align: center;
 	float: left;
-
 }
 
 DIV#attribute .inputtofind  INPUT {
 	width: 50px;
 	height: 40px;
-	text-align:center;
+	text-align: center;
 	border: 0;
-	margin:0;
+	margin: 0;
 	font-size: 30px;
 	font-family: woodstamp;
 	background: transparent;
@@ -89,7 +127,7 @@ DIV#grundwerte .hauptwerte, DIV#grundwerte .attributswerte {
 	display: inline-block;
 }
 
-DIV#grundwerte .hauptwerte > DIV {
+DIV#grundwerte .hauptwerte>DIV {
 	float: left;
 	width: 180px;
 	font-size: 50px;
@@ -98,7 +136,7 @@ DIV#grundwerte .hauptwerte > DIV {
 	text-align: center;
 }
 
-DIV#grundwerte .attributswerte > DIV {
+DIV#grundwerte .attributswerte>DIV {
 	float: left;
 	width: 180px;
 	font-size: 30px;
@@ -110,9 +148,9 @@ DIV#grundwerte .attributswerte > DIV {
 DIV#grundwerte  INPUT {
 	width: 60px;
 	height: 40px;
-	text-align:center;
+	text-align: center;
 	border: 0;
-	margin:0;
+	margin: 0;
 	font-size: 40px;
 	font-family: woodstamp;
 	border: 4px solid black;
@@ -127,9 +165,9 @@ DIV#grundwerte .attributswerte {
 DIV#grundwerte .attributswerte INPUT {
 	width: 66px;
 	height: 40px;
-	text-align:center;
+	text-align: center;
 	border: 0;
-	margin:0;
+	margin: 0;
 	font-size: 40px;
 	font-family: woodstamp;
 	border: 1px solid black;
@@ -143,39 +181,91 @@ DIV#attribute .inputtofind  SPAN {
 	font-family: Georgia;
 }
 
-DIV#attribute > DIV {
-	 background-size: 60px 60px;
-    background-repeat: no-repeat;
+DIV#attribute>DIV {
+	background-size: 60px 60px;
+	background-repeat: no-repeat;
 	background-position: 1px -7px;
 }
 
 DIV#attribute #ds_i_lebenskraft {
 	background-image: url(../img/lebenskraft.png);
 }
+
+DIV#attribute #ds_i_lebenskraft INPUT, DIV#attribute #ds_i_mana INPUT {
+	display: none;
+}
+
+DIV#attribute #ds_i_lebenskraft SELECT, DIV#attribute #ds_i_mana SELECT
+	{
+	width: 66px;
+	height: 40px;
+	text-align: center;
+	border: 0;
+	margin: 0;
+	font-size: 30px;
+	font-family: woodstamp;
+	border: 1px solid black;
+	float: right;
+	background: transparent;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	border-radius: 0;
+}
+
+.wrapper {
+	float: right;
+	position: relative;
+	top: 48px;
+	font-family: woodstamp !important;
+	font-size: 16px !important;
+}
+
+DIV#attribute #ds_i_lebenskraft SELECT {
+	color: red;
+	position: relative;
+	top: -35px;
+}
+
+DIV#attribute #ds_i_mana SELECT {
+	color: blue;
+	position: relative;
+	top: -35px;
+}
+
 DIV#attribute #ds_i_abwehr {
 	background-image: url(../img/abwehr.png);
 }
+
 DIV#attribute #ds_i_initiative {
 	background-image: url(../img/initiative.png);
 }
+
 DIV#attribute #ds_i_laufen {
 	background-image: url(../img/laufen.png);
 }
+
 DIV#attribute #ds_i_abwehr {
 	background-image: url(../img/abwehr.png);
 }
+
 DIV#attribute #ds_i_schlagen {
 	background-image: url(../img/schlagen.png);
 }
+
 DIV#attribute #ds_i_schiessen {
 	background-image: url(../img/schiessen.png);
 }
+
 DIV#attribute #ds_i_zaubern {
 	background-image: url(../img/zaubern.png);
 }
+
 DIV#attribute #ds_i_zielzauber {
 	background-image: url(../img/zielzauber.png);
 }
+
 DIV#attribute #ds_i_mana {
 	background-image: url(../img/mana.png);
 }
@@ -184,11 +274,98 @@ DIV#waffen {
 	float: left;
 }
 
+DIV#probs TBODY {
+	font-family: Calibri;
+}
+
+DIV#probs TBODY .outline {
+	font-family: Woodstamp;
+	font-size: 30px;
+	text-align: center;
+}
+
+DIV#probs, DIV#probs TABLE {
+	width: 100%;
+}
+
+
 .outline {
 	color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;  
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px
+		0 #000;
 }
+
+TABLE {
+	width: 100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+TD {
+	border: 1px solid black;
+}
+THEAD {
+	background-color: #AAA;
+}
+TBODY {
+	background-color: #FAFAFA;
+}
+TBODY input {
+	width: 100%;
+	background: transparent;
+	border: 0;
+	margin: 0;
+}
+
+#gold TABLE {
+	height: 150px;
+	width: 450px;
+	margin:auto;
+	margin-top: 20px;
+	bordeR: 0;
+}
+
+#gold TABLE TD {
+	border: 0;
+	width: 33.3%;
+}
+
+#gold TABLE TD INPUT{
+  border: 0;
+  font-family: Woodstamp;
+  font-size: 50px;
+  text-align: center;
+  background: transparent;
+}
+
+#gold > TABLE TBODY{
+	background: none;
+	background-image: url(../img/gold.png);
+	background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: Woodstamp;
+  font-size: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#gold TABLE.t_calc, #gold TABLE.t_calc tbody {
+	height: auto;
+	background-image: none;
+	font-size: 30px;
+}
+
+#gold TABLE.t_calc input {
+	font-size: 30px;
+	border: 1px solid black;
+	width: 50%;
+}
+
+#gold TABLE.t_calc div {
+	cursor: pointer;
+}
+#gold TABLE.t_calc TD {
+	width: auto;
+}
+
+
