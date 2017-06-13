@@ -17,6 +17,31 @@
       }
     });
   }
+  
+  this.data = {
+      characters : [], 
+  
+      load : function data_load() {
+        var data = localStorage.getItem("nmo.dungeonslayers.characters");
+        if (data) {
+          $(data.characters).each(function(index, value) {
+            _ds.data.characters.push(value);
+          });
+        } else {
+          _ds.data.characters.push(new Character());
+        }
+        _ds.character = _ds.data.characters[0];
+        _ds.calcHTML();
+        _ds.calcStats();
+      },
+      save : function data_save() {
+        var data = {
+            characters : []
+        };
+        data.characters.push(_ds.character);
+        localStorage.setItem("nmo.dungeonslayers.characters", data);
+      }
+  }
 
   this.input = function(path) {
     this.set = function(val) {
@@ -225,8 +250,6 @@
                     } else {
                       $('#probs TR').each(
                           function() {
-                            console.log(plus[0] + " + " + plus[1] + " / "
-                                + $(this).text().trim());
                             if (plus[0].trim().length > 0
                                 && $(this).text().trim().startsWith(
                                     plus[0].trim())) {
@@ -464,7 +487,7 @@
   });
 
   $("#ds_i_lebenskraft input").change(function(val) {
-    var max = _ds.input("lebenskraft").num();
+    var max = Math.min(100,_ds.input("lebenskraft").num());
     var html = "";
     for (var i = max; i > 0; i--) {
       html += "<option value='" + i + "'>" + i + "</option>";
@@ -475,7 +498,7 @@
     $("#ds_i_lebenskraft select").val(old);
   });
   $("#ds_i_mana input").change(function(val) {
-    var max = _ds.input("mana").num();
+    var max = Math.min(100,_ds.input("mana").num());
     var html = "";
     for (var i = max; i > 0; i--) {
       html += "<option value='" + i + "'>" + i + "</option>";
@@ -518,8 +541,10 @@
     $(this).removeClass("focus");
     _ds.calcStats();
   });
+  $("#attribute input").prop("readonly", true)
   
-  this.readFromFile("file://character.json");
+  //this.readFromFile("file://character.json");
+  this.data.load();
   $("#overlay").removeClass('hidden');
   $("#overlay > DIV").addClass('hidden');
   $("#werte").removeClass('hidden');
