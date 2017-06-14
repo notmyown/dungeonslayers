@@ -1,3 +1,9 @@
+@media only screen and (min-width: 1025px) {
+	.ds {
+	 width: 1024px;
+	}
+}
+
 @font-face {
 	font-family: "woodstamp";
 	src: url(./font/Woodstamp.otf) format("truetype");
@@ -7,16 +13,13 @@ body {
 	font-family: woodstamp;
 	padding: 0;
 	margin: 0;
+	 background-image: url(../img/background.jpg);
 }
 
 .ds {
-	width: 620px;
 	padding: 5px;
-	margin: 5px;
-	border: 1px solid black;
-	height: 340px;
+	margin: 1em auto;
 	overflow: hidden;
-	background-image: url(../img/background.jpg);
 }
 
 .ds .menu {
@@ -64,14 +67,14 @@ body {
 
 #overlay {
 	position: relative;
-	width: 620px;
-	height: 275px;
+	width: 100%;
 	margin: 0;
 	padding: 0;
 	vertical-align: top;
 	display: inline-block;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	max-height: 90vh;
 }
 
 .inventory {
@@ -98,17 +101,22 @@ DIV.metawerte {
 	color: red;
 }
 
+DIV#grundwerte {
+  width: 100%;
+  text-align: center;
+}
+
 DIV#attribute {
-	float: left;
-	width: 600px;
-	padding-left: 40px;
+	width: 100%;
+	text-align: center;
 }
 
 DIV#attribute .inputtofind {
-	width: 60px;
+	width: 4em;
+	height: 5em;
 	text-transform: uppercase;
 	text-align: center;
-	float: left;
+	display: inline-block;
 }
 
 DIV#attribute .inputtofind  INPUT {
@@ -182,13 +190,15 @@ DIV#attribute .inputtofind  SPAN {
 }
 
 DIV#attribute>DIV {
-	background-size: 60px 60px;
+	background-size: 3em;
 	background-repeat: no-repeat;
-	background-position: 1px -7px;
+	background-position: 0.5em 0;
 }
 
 DIV#attribute #ds_i_lebenskraft {
 	background-image: url(../img/lebenskraft.png);
+	position: relative;
+  top: -1em;
 }
 
 DIV#attribute #ds_i_lebenskraft INPUT, DIV#attribute #ds_i_mana INPUT {
@@ -197,41 +207,40 @@ DIV#attribute #ds_i_lebenskraft INPUT, DIV#attribute #ds_i_mana INPUT {
 
 DIV#attribute #ds_i_lebenskraft SELECT, DIV#attribute #ds_i_mana SELECT
 	{
-	width: 66px;
-	height: 40px;
+	width: 100%;
 	text-align: center;
+	text-align-last:center;
 	border: 0;
 	margin: 0;
-	font-size: 30px;
+	font-size: 2em;
 	font-family: woodstamp;
-	border: 1px solid black;
-	float: right;
 	background: transparent;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	border: none;
 	border-radius: 0;
+	padding-right: 0.1em;
 }
 
 .wrapper {
 	float: right;
 	position: relative;
-	top: 48px;
+	top: 3em;
 	font-family: woodstamp !important;
-	font-size: 16px !important;
+	font-size: 1em !important;
 }
 
 DIV#attribute #ds_i_lebenskraft SELECT {
 	color: red;
 	position: relative;
-	top: -35px;
+	top: -1em;
 }
 
 DIV#attribute #ds_i_mana SELECT {
 	color: blue;
 	position: relative;
-	top: -35px;
+	top: -1em;
 }
 
 DIV#attribute #ds_i_abwehr {
@@ -244,10 +253,6 @@ DIV#attribute #ds_i_initiative {
 
 DIV#attribute #ds_i_laufen {
 	background-image: url(../img/laufen.png);
-}
-
-DIV#attribute #ds_i_abwehr {
-	background-image: url(../img/abwehr.png);
 }
 
 DIV#attribute #ds_i_schlagen {
@@ -268,6 +273,8 @@ DIV#attribute #ds_i_zielzauber {
 
 DIV#attribute #ds_i_mana {
 	background-image: url(../img/mana.png);
+	position: relative;
+top: -1em;
 }
 
 DIV#waffen {
@@ -318,11 +325,11 @@ TBODY input {
 }
 
 #gold TABLE {
-	height: 150px;
-	width: 450px;
+	width: 80%;
+	height: 3em;
 	margin:auto;
-	margin-top: 20px;
-	bordeR: 0;
+	margin-top: 0.5em;
+	border: 0;
 }
 
 #gold TABLE TD {
@@ -333,39 +340,98 @@ TBODY input {
 #gold TABLE TD INPUT{
   border: 0;
   font-family: Woodstamp;
-  font-size: 50px;
+  font-size: 3em;
   text-align: center;
   background: transparent;
 }
 
-#gold > TABLE TBODY{
+#gold > TABLE {
 	background: none;
+	background-color: transparent;
 	background-image: url(../img/gold.png);
 	background-size: 100% 100%;
   background-repeat: no-repeat;
   font-family: Woodstamp;
-  font-size: 50px;
+  font-size: 3.5em;
   text-align: center;
   vertical-align: middle;
+}
+
+#gold > TABLE TBODY {
+  background: none;
+  background-color: transparent;
 }
 
 #gold TABLE.t_calc, #gold TABLE.t_calc tbody {
 	height: auto;
 	background-image: none;
-	font-size: 30px;
+	font-size: 1.5em;
+}
+
+#gold TABLE.t_calc {
+	width: 80%;
 }
 
 #gold TABLE.t_calc input {
-	font-size: 30px;
+	font-size: 2em;
 	border: 1px solid black;
 	width: 50%;
 }
 
 #gold TABLE.t_calc div {
 	cursor: pointer;
+	white-space: nowrap;
 }
 #gold TABLE.t_calc TD {
 	width: auto;
+}
+
+#file TABLE {
+	margin-top: 2em;
+}
+
+#file TABLE, #file TABLE TBODY, #file TABLE TR, #file TABLE TD {
+	border: none;
+	background: none;
+	background-color: transparent;
+}
+
+#file TABLE TD.big {
+	width: 33.3%;
+}
+#file TABLE TD.small {
+  width: 11.1%;
+}
+
+#ds_banner img {
+  width:100%;
+}
+
+#file #ds_i_save, #file #ds_i_load, #file #ds_i_new{
+	margin: .2em;
+	border: 1px solid black;
+	background-color: #AAA;
+	text-align: center;
+	cursor: pointer;
+	font-size: 2em;
+}
+
+
+#file DIV {
+	margin: .3em;
+	padding: 0px 2px;
+	background-color: #FAFAFA;
+	border: 1px solid black;
+}
+
+#file .small SPAN, #ds_i_exp SPAN {
+	width: 100%;
+	text-align: center;
+	display: block;
+}
+#file .small INPUT, #ds_i_exp INPUT {
+  width: 100%;
+  text-align: center;
 }
 
 

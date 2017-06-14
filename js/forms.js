@@ -18,11 +18,66 @@
     });
   }
   
+  this.gold = {
+      g : $("#g_current_g"),
+      s : $("#g_current_s"),
+      k : $("#g_current_k"),
+      g_new : $(".g_new_g"),
+      s_new : $(".g_new_s"),
+      k_new : $(".g_new_k"),
+      value : _ds.character.gold,
+      calc : {
+        g_v : 0,
+        s_v : 0,
+        k_v : 0,
+        g_n_v : 0,
+        s_n_v : 0,
+        k_n_v : 0,
+        init : function g_calc_init() {
+          _ds.gold.calc.g_v = Number(_ds.gold.g.text());
+          _ds.gold.calc.s_v = Number(_ds.gold.s.text());
+          _ds.gold.calc.k_v = Number(_ds.gold.k.text());
+          _ds.gold.value = 100 * _ds.gold.calc.g_v + 10 *_ds.gold.calc.s_v + _ds.gold.calc.k_v;
+          _ds.gold.calc.g_n_v = Number(_ds.gold.g_new.val());
+          _ds.gold.calc.s_n_v = Number(_ds.gold.s_new.val());
+          _ds.gold.calc.k_n_v = Number(_ds.gold.k_new.val());        
+        },
+        set : function g_calcset(multiply) {
+          _ds.gold.calc.init();
+          _ds.gold.calc.val(multiply);
+          _ds.gold.calc.clear();
+        },
+        val : function g_calcset(multiply) {
+          var sum = multiply * (100 * _ds.gold.calc.g_n_v + 10 * _ds.gold.calc.s_n_v + _ds.gold.calc.k_n_v);
+          _ds.gold.value += sum;
+          
+          var g_mod = _ds.gold.value % 100;
+          var g_over = (_ds.gold.value - g_mod) / 100;
+          _ds.gold.g.html(g_over);
+          var s_mod = g_mod % 10;
+          var s_over = (g_mod - s_mod) / 10;
+          _ds.gold.s.html(s_over);
+          _ds.gold.k.html(s_mod);
+        },
+        minus : function g_c_minus() {
+          _ds.gold.calc.set(-1);
+        },
+        plus : function g_c_plus() {
+          _ds.gold.calc.set(1);
+        },
+        clear : function g_c_clear() {
+          _ds.gold.g_new.val("");
+          _ds.gold.s_new.val("");
+          _ds.gold.k_new.val("");
+        }
+      }
+    }
+  
   this.data = {
       characters : [], 
   
       load : function data_load() {
-        var data = localStorage.getItem("nmo.dungeonslayers.characters");
+        var data = JSON.parse(localStorage.getItem("nmo.dungeonslayers.characters"));
         if (data) {
           $(data.characters).each(function(index, value) {
             _ds.data.characters.push(value);
@@ -35,11 +90,75 @@
         _ds.calcStats();
       },
       save : function data_save() {
+        _ds.data.collect();
         var data = {
             characters : []
         };
         data.characters.push(_ds.character);
-        localStorage.setItem("nmo.dungeonslayers.characters", data);
+        localStorage.setItem("nmo.dungeonslayers.characters", JSON.stringify(data));
+      }, 
+      collect : function data_collect() {
+        _ds.character.player = _ds.input("player").text();
+        _ds.character.name = _ds.input("name").text();
+        _ds.character.volk = _ds.input("volk").text();
+        _ds.character.stufe = _ds.input("stufe").num();
+        _ds.character.lp = _ds.input("lp").num();
+        _ds.character.tp = _ds.input("tp").num();
+        _ds.character.klasse = _ds.input("klasse").text();
+        _ds.character.volksfahigkeiten = _ds.input("volksfahigkeiten").text();
+        _ds.character.exp = _ds.input("exp").num();
+        _ds.character.heldenklasse = _ds.input("heldenklasse").text();
+        _ds.character.gold = _ds.gold.value;
+        _ds.character.weapons = [];
+        var list = $('#waffen TBODY TR');
+        list.each(function(index, elem) {
+          var data = {
+            name : $(elem).find(".name").val(),
+            nah : $(elem).find(".nah").attr("checked") == "checked",
+            fern : $(elem).find(".fern").attr("checked") == "checked",
+            attributes : $(elem).find(".Eigenschaften").val(),
+            active : $(elem).find(".active").attr("checked") == "checked",
+          }
+          _ds.character.weapons.push(data);
+        });
+        _ds.character.defense = [];
+        list = $('#defense TBODY TR');
+        list.each(function(index, elem) {
+          var data = {
+            name : $(elem).find(".name").val(),
+            nah : $(elem).find(".nah").attr("checked") == "checked",
+            fern : $(elem).find(".fern").attr("checked") == "checked",
+            attributes : $(elem).find(".Eigenschaften").val(),
+            active : $(elem).find(".active").attr("checked") == "checked",
+          }
+          _ds.character.defense.push(data);
+        });
+        _ds.character.spells = [];
+        list = $('#spells TBODY TR');
+        list.each(function(index, elem) {
+          var data = {
+            name : $(elem).find(".name").val(),
+            nah : $(elem).find(".nah").attr("checked") == "checked",
+            fern : $(elem).find(".fern").attr("checked") == "checked",
+            attributes : $(elem).find(".Eigenschaften").val(),
+            active : $(elem).find(".active").attr("checked") == "checked",
+          }
+          _ds.character.spells.push(data);
+        });
+        _ds.character.talents = [];
+        list = $('#talents TBODY TR');
+        list.each(function(index, elem) {
+          var data = {
+            name : $(elem).find(".name").val(),
+            nah : $(elem).find(".nah").attr("checked") == "checked",
+            fern : $(elem).find(".fern").attr("checked") == "checked",
+            attributes : $(elem).find(".Eigenschaften").val(),
+            active : $(elem).find(".active").attr("checked") == "checked",
+            rang : $(elem).find(".stufe").val()
+          }
+          _ds.character.talents.push(data);
+        });
+        console.log(_ds.character);
       }
   }
 
@@ -69,16 +188,28 @@
     this.input('aura').set(character.au);
     this.input('name').set(character.name);
     this.input('stufe').set(character.stufe);
+    this.input('lp').set(character.lp);
+    this.input('exp').set(character.exp);
+    this.input('tp').set(character.tp);
+    this.input('player').set(character.player);
+    this.input('volk').set(character.volk);
+    this.input('klasse').set(character.klasse);
+    this.input('heldenklasse').set(character.heldenklasse);
+    this.input('volksfahigkeiten').set(character.volksfahigkeiten);
     this.input('panzerung').set(0);
     $('TR.inputtofind').each(function() {
       $(this).find(".outline").html("0");
     });
+    //this.gold.calc.init();
+    //_ds.character.gold = _ds.gold.value;
+    this.gold.value = character.gold;
+    this.gold.calc.val(1);
   }
 
   this.newRow = function(id) {
     $(id + ' tbody')
         .append(
-            "<tr><td><input class='name' type=text value=''></td><td><input type='checkbox' class='nah' /></td><td><input type='checkbox' class='fern' /></td><td><input class='Eigenschaften' type=text value=''><input class='Stufe' type=text value=''></td><td><input class='active' type='checkbox'/></td></tr>");
+            "<tr><td><input class='name' type=text value=''></td><td><input type='checkbox' class='nah' /></td><td><input type='checkbox' class='fern' /></td><td><input class='Eigenschaften' type=text value=''><input class='stufe' type=text value=''></td><td><input class='active' type='checkbox'/></td></tr>");
   }
   this.calcHTML = function() {
     var weapons = $('#waffen TBODY');
@@ -417,59 +548,6 @@
     this.tables(".inventory", false, true);
   }
 
-  this.gold = {
-    g : $("#g_current_g"),
-    s : $("#g_current_s"),
-    k : $("#g_current_k"),
-    g_new : $(".g_new_g"),
-    s_new : $(".g_new_s"),
-    k_new : $(".g_new_k"),
-    value : 0,
-    calc : {
-      g_v : 0,
-      s_v : 0,
-      k_v : 0,
-      g_n_v : 0,
-      s_n_v : 0,
-      k_n_v : 0,
-      init : function g_calc_init() {
-        _ds.gold.calc.g_v = Number(_ds.gold.g.text());
-        _ds.gold.calc.s_v = Number(_ds.gold.s.text());
-        _ds.gold.calc.k_v = Number(_ds.gold.k.text());
-        _ds.gold.value = 100 * _ds.gold.calc.g_v + 10 *_ds.gold.calc.s_v + _ds.gold.calc.k_v;
-        _ds.gold.calc.g_n_v = Number(_ds.gold.g_new.val());
-        _ds.gold.calc.s_n_v = Number(_ds.gold.s_new.val());
-        _ds.gold.calc.k_n_v = Number(_ds.gold.k_new.val());        
-      },
-      set : function g_calcset(multiply) {
-        _ds.gold.calc.init();
-        var sum = multiply * (100 * _ds.gold.calc.g_n_v + 10 * _ds.gold.calc.s_n_v + _ds.gold.calc.k_n_v);
-        _ds.gold.value += sum;
-        
-        var g_mod = _ds.gold.value % 100;
-        var g_over = (_ds.gold.value - g_mod) / 100;
-        _ds.gold.g.html(g_over);
-        var s_mod = g_mod % 10;
-        var s_over = (g_mod - s_mod) / 10;
-        _ds.gold.s.html(s_over);
-        _ds.gold.k.html(s_mod);
-        
-        _ds.gold.calc.clear();
-      },
-      minus : function g_c_minus() {
-        _ds.gold.calc.set(-1);
-      },
-      plus : function g_c_plus() {
-        _ds.gold.calc.set(1);
-      },
-      clear : function g_c_clear() {
-        _ds.gold.g_new.val("");
-        _ds.gold.s_new.val("");
-        _ds.gold.k_new.val("");
-      }
-    }
-  }
-
   $("#click").click(function() {
     _ds.calcStats();
   });
@@ -541,11 +619,14 @@
     $(this).removeClass("focus");
     _ds.calcStats();
   });
+  
+  $("#ds_i_save").click(function() {
+    _ds.data.save();
+  });
+  
   $("#attribute input").prop("readonly", true)
   
   //this.readFromFile("file://character.json");
   this.data.load();
-  $("#overlay").removeClass('hidden');
-  $("#overlay > DIV").addClass('hidden');
-  $("#werte").removeClass('hidden');
+  $("#m_file").trigger("click");
 }

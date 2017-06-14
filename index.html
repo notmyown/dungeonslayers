@@ -20,17 +20,34 @@
 			<div id='m_gold' title='Geld'></div>
 		</div>
 		<div id='overlay' class='hidden'>
-			<div id='file'>Datei</div>
+			<div id='file'>
+				<table>
+					<tr>
+						<td class='big'><div id='ds_i_player'><span>Spieler:</span><input /></div></td>
+						<td colspan=3 id='ds_banner' class='big'><img src="./img/banner.png"/></td>
+						<td class='big'><div id='ds_i_name'><span>Charakter:</span><input /></div></td>
+					</tr>
+					<tr>
+					  <td class='big'><div id='ds_i_volk'><span>Volk:</span><input /></div></td>
+					  <td class='small'><div id='ds_i_stufe'><input /><span>Stufe</span></div></td>
+            <td class='small'><div id='ds_i_lp'><input /><span>LP</span></div></td>
+            <td class='small'><div id='ds_i_tp'><input /><span>TP</span></div></td>
+            <td class='big'><div id='ds_i_klasse'><span>Klasse:</span><input /></div></td>
+          </tr>
+          <tr>
+            <td class='big'><div id='ds_i_volksfahigkeiten'><span>Volksf&auml;higkeiten:</span><input /></div></td>
+            <td colspan=3 class='big'><div id='ds_i_exp'><input /><span>Erfahrungspunkte</span></div></td>
+            <td class='big'><div id='ds_i_heldenklasse'><span>Heldenklasse:</span><input /></div></td>
+          </tr>
+          <tr>
+            <td><div id='ds_i_new'><span>Neu</span></div></td>
+            <td colspan=3><div id='ds_i_load'><span>Laden</span></div></td>
+            <td><div id='ds_i_save'><span>Speichern</span></div></td>
+          </tr>
+				</table>
+			</div>
 			<div id='werte'>
 				<div id='grundwerte'>
-					<div class='metawerte'>
-						<div class='inputtofind' id='ds_i_name'>
-							Name<input type='text' />
-						</div>
-						<div class='inputtofind' id='ds_i_stufe'>
-							Stufe<input type='text' />
-						</div>
-					</div>
 					<div class='hauptwerte'>
 						<div class='inputtofind kor' id='ds_i_koerper'>
 							K&ouml;rper<input type='text' class='outline' />
@@ -87,7 +104,7 @@
 						<input type='text' />Initiative<span class='calc'>AGI+BE</span>
 					</div>
 					<div class='inputtofind' id='ds_i_laufen'>
-						<input type='text' />Laufen<span class='calc'>(AGI/2)+1</span>
+						<input type='text' />Laufen<span class='calc'>(AGI/2) + 1</span>
 					</div>
 					<div class='inputtofind' id='ds_i_schlagen'>
 						<input type='text' />Schlagen<span class='calc'>K&ouml;R+ST</span>
@@ -329,13 +346,12 @@
 						<td><input class='g_new_s'></td>
 						<td><input class='g_new_k'></td>
 						<td>
-							<div class='plus'> Plus--&gt;&gt;</div>
+							<div class='plus'>Plus--&gt;&gt;</div>
 						</td>
 					</tr>
 				</table>
 			</div>
 		</div>
-		<input id='click' type='button' value='Neu berechnen' />
 	</div>
 	<script>
     var ds;
