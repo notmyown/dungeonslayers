@@ -40,6 +40,7 @@ function Character() {
   this.defense = [];
   this.talents = [];
   this.spells = [];
+  this.inventar = [];
 
   this.print = function() {
     //

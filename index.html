@@ -4,6 +4,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="css/ds.css" type="text/css" charset="utf-8" />
 <script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/Filesaver.min.js"></script>
 <script src="js/character.js"></script>
 <script src="js/forms.js"></script>
 </head>
@@ -16,34 +17,52 @@
 			<div id='m_defense' title='R&uuml;stung'></div>
 			<div id='m_spells' title='Zauber'></div>
 			<div id='m_talents' titel='Talente'></div>
+			<div id='m_inventar' title='Inventar'></div>
 			<div id='m_probs' title='Proben'></div>
 			<div id='m_gold' title='Geld'></div>
+			<div id='m_settings' title='Einstellungen'></div>
 		</div>
 		<div id='overlay' class='hidden'>
 			<div id='file'>
 				<table>
 					<tr>
-						<td class='big'><div id='ds_i_player'><span>Spieler:</span><input /></div></td>
-						<td colspan=3 id='ds_banner' class='big'><img src="./img/banner.png"/></td>
-						<td class='big'><div id='ds_i_name'><span>Charakter:</span><input /></div></td>
+						<td class='big'><div id='ds_i_player'>
+								<span>Spieler:</span><input />
+							</div></td>
+						<td colspan=3 id='ds_banner' class='big'><img
+							src="./img/banner.png" /></td>
+						<td class='big'><div id='ds_i_name'>
+								<span>Charakter:</span><input />
+							</div></td>
 					</tr>
 					<tr>
-					  <td class='big'><div id='ds_i_volk'><span>Volk:</span><input /></div></td>
-					  <td class='small'><div id='ds_i_stufe'><input /><span>Stufe</span></div></td>
-            <td class='small'><div id='ds_i_lp'><input /><span>LP</span></div></td>
-            <td class='small'><div id='ds_i_tp'><input /><span>TP</span></div></td>
-            <td class='big'><div id='ds_i_klasse'><span>Klasse:</span><input /></div></td>
-          </tr>
-          <tr>
-            <td class='big'><div id='ds_i_volksfahigkeiten'><span>Volksf&auml;higkeiten:</span><input /></div></td>
-            <td colspan=3 class='big'><div id='ds_i_exp'><input /><span>Erfahrungspunkte</span></div></td>
-            <td class='big'><div id='ds_i_heldenklasse'><span>Heldenklasse:</span><input /></div></td>
-          </tr>
-          <tr>
-            <td><div id='ds_i_new'><span>Neu</span></div></td>
-            <td colspan=3><div id='ds_i_load'><span>Laden</span></div></td>
-            <td><div id='ds_i_save'><span>Speichern</span></div></td>
-          </tr>
+						<td class='big'><div id='ds_i_volk'>
+								<span>Volk:</span><input />
+							</div></td>
+						<td class='small'><div id='ds_i_stufe'>
+								<input /><span>Stufe</span>
+							</div></td>
+						<td class='small'><div id='ds_i_lp'>
+								<input /><span>LP</span>
+							</div></td>
+						<td class='small'><div id='ds_i_tp'>
+								<input /><span>TP</span>
+							</div></td>
+						<td class='big'><div id='ds_i_klasse'>
+								<span>Klasse:</span><input />
+							</div></td>
+					</tr>
+					<tr>
+						<td class='big'><div id='ds_i_volksfahigkeiten'>
+								<span>Volksf&auml;higkeiten:</span><input />
+							</div></td>
+						<td colspan=3 class='big'><div id='ds_i_exp'>
+								<input /><span>Erfahrungspunkte</span>
+							</div></td>
+						<td class='big'><div id='ds_i_heldenklasse'>
+								<span>Heldenklasse:</span><input />
+							</div></td>
+					</tr>
 				</table>
 			</div>
 			<div id='werte'>
@@ -128,11 +147,12 @@
 				<table>
 					<thead>
 						<tr>
-							<td>Waffen</td>
+							<td width=30%>Waffen</td>
 							<td>nah</td>
 							<td>fern</td>
-							<td>Besonderes</td>
+							<td width=70%>Besonderes</td>
 							<td>Ausger&uuml;stet</td>
+							<td>x</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -144,11 +164,10 @@
 				<table>
 					<thead>
 						<tr>
-							<td>R&uuml;stung</td>
-							<td>nah</td>
-							<td>fern</td>
-							<td>Besonderes</td>
+							<td width=30%>R&uuml;stung</td>
+							<td width=70%>Besonderes</td>
 							<td>Ausger&uuml;stet</td>
+							<td>x</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -160,11 +179,12 @@
 				<table>
 					<thead>
 						<tr>
-							<td>Zauber</td>
+							<td width=30%>Zauber</td>
 							<td>nah</td>
 							<td>fern</td>
-							<td>Besonderes</td>
-							<td>Ausger&uuml;stet</td>
+							<td width=70%>Besonderes</td>
+							<td>Aktiv</td>
+							<td>x</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -176,18 +196,32 @@
 				<table>
 					<thead>
 						<tr>
-							<td>Talent</td>
-							<td>nah</td>
-							<td>fern</td>
-							<td>Besonderes</td>
-							<td width=30>Stufe</td>
-							<td>Ausger&uuml;stet</td>
+							<td width=30%>Talent</td>
+							<td width=60%>Besonderes</td>
+							<td width=10%>Stufe</td>
+							<td>Aktiv</td>
+							<td>x</td>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 				</table>
 				<input class='newrow nr_talents' type='button' value='Neue Zeile' />
+			</div>
+			<div id='inventar' class='inventory'>
+				<table>
+					<thead>
+						<tr>
+							<td width=25%>Ausr&uuml;stung</td>
+							<td width=25%>Wo gelagert?</td>
+							<td width=50%>Besonderes</td>
+							<td>x</td>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+				<input class='newrow nr_inventar' type='button' value='Neue Zeile' />
 			</div>
 			<div id='probs'>
 				<table>
@@ -349,6 +383,34 @@
 							<div class='plus'>Plus--&gt;&gt;</div>
 						</td>
 					</tr>
+				</table>
+			</div>
+			<div id='settings' class='inventory'>
+				<table>
+					<tbody>
+					<tr>
+              <td>
+                <div class='button' id='ds_i_new'>Zurücksetzen</div>
+              </td>
+            </tr>
+						<tr>
+							<td>
+								<div class='button' id='ds_i_save'>Speichern</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class='button' id="ds_i_export">Speicherstand
+									Exportieren</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class='button' id="ds_i_import">Speicherstand
+									Importieren</div>
+							</td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 		</div>

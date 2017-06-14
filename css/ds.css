@@ -64,6 +64,13 @@ body {
 #m_gold {
   background-image: url(../img/menu_gold.png);
 }
+#m_inventar {
+  background-image: url(../img/menu_inventar.png);
+}
+#m_settings {
+  background-image: url(../img/menu_settings.png);
+}
+
 
 #overlay {
 	position: relative;
@@ -407,7 +414,7 @@ TBODY input {
   width:100%;
 }
 
-#file #ds_i_save, #file #ds_i_load, #file #ds_i_new{
+#file #ds_i_save, #file #ds_i_load, #file #ds_i_new, .button{
 	margin: .2em;
 	border: 1px solid black;
 	background-color: #AAA;
