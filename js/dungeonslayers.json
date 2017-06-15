@@ -1,4 +1,4 @@
-{ "characters" : [
+[
   {
     "kor": "4",
     "ha": "1",
@@ -88,7 +88,7 @@
         "name": "Wahrnehmung",
         "nah": false,
         "fern": false,
-        "attributes": "Bemerken + 1",
+        "attributes": "Bemerken + 2",
         "active": true,
         "rang": "1"
       },
@@ -192,4 +192,4 @@
     ],
     "undefined": ""
   }
-]}
+]

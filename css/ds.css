@@ -26,6 +26,7 @@ body {
 	height: 30px;
 	border-bottom: 1px solid black;
 	margin-bottom: 5px;
+	padding-bottom: 10px;
 	width: 100%;
 }
 
@@ -38,6 +39,7 @@ body {
 	width: 30px;
 	height: 30px;
 	overflow: hidden;
+	border: 1px solid black;
 }
 
 #m_file {
