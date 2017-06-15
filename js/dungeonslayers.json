@@ -1,1 +1,195 @@
-﻿{"kor":"4","ha":"1","pa":0,"agi":"7","be":"0","st":"0","stufe":2,"ge":"2","au":"6","ve":"5","gei":"8","name":"Olwil","exp":230,"player":"Marco","volk":"Elf","lp":0,"tp":0,"volksfahigkeiten":"Leichtfüssig, Nachtsicht, Unsterblich","klasse":"Heiler","heldenklasse":"/","gold":10401,"weapons":[{"name":"Zauberstab","nah":true,"fern":false,"attributes":"ZB+1","active":true},{"name":"Kurzbogen","nah":false,"fern":true,"attributes":"WB+1","active":false}],"defense":[{"name":"Runenbestickte Robe","nah":false,"fern":false,"attributes":"Aura + 1","active":true},{"name":"Ring","nah":false,"fern":false,"attributes":"ZB + 1","active":true},{"name":"Elfenstiefel","nah":false,"fern":false,"attributes":"Laufen +1","active":true},{"name":"Kette der Sicht","nah":false,"fern":false,"attributes":"Magie ersprüren + 1 ","active":true}],"talents":[{"name":"Fürsorger","nah":false,"fern":false,"attributes":"ZB + 1","active":true,"rang":"2"},{"name":"Genesung","nah":false,"fern":false,"attributes":"Körper + 1 ","active":true,"rang":"1"},{"name":"Wahrnehmung","nah":false,"fern":false,"attributes":"Bemerken + 1","active":true,"rang":"1"},{"name":"Reiten","nah":false,"fern":false,"attributes":"Reiten +1","active":true,"rang":"1"},{"name":"Diener des Lichts","nah":false,"fern":false,"attributes":"Abwehr + 1","active":true,"rang":"1"}],"spells":[{"name":"Heilende Hand","nah":true,"fern":false,"attributes":"ZB + 1","active":true}],"inventar":[{"name":"Dietrich 6x","attributes":"","wo":"Rucksack"},{"name":"Schleuder","attributes":"","wo":"Rucksack"},{"name":"Kletterausrüstung","attributes":"","wo":"Rucksack"},{"name":"Pferd","attributes":"","wo":"Stall"},{"name":"Wasserschlauch","attributes":"","wo":"Rucksack"},{"name":"Heilkraut 12x","attributes":"","wo":"Rucksack"},{"name":"Decke","attributes":"","wo":"Rucksack"},{"name":"Feuerholz","attributes":"","wo":"Rucksack"},{"name":"Würfel","attributes":"","wo":"Rucksack"},{"name":"Fakeln 5x","attributes":"","wo":"Rucksack"},{"name":"Manatrank 2x","attributes":"","wo":"Rucksack"},{"name":"Klingeln 39x","attributes":"","wo":"Rucksack"},{"name":"Netz","attributes":"","wo":"Rucksack"},{"name":"Bronzeschlüssel","attributes":"","wo":"Rucksack"}],"undefined":""}
+{ "characters" : [
+  {
+    "kor": "4",
+    "ha": "1",
+    "pa": 0,
+    "agi": "7",
+    "be": "0",
+    "st": "0",
+    "stufe": 2,
+    "ge": "2",
+    "au": "6",
+    "ve": "5",
+    "gei": "8",
+    "name": "Olwil",
+    "exp": 230,
+    "player": "Marco",
+    "volk": "Elf",
+    "lp": 0,
+    "tp": 0,
+    "volksfahigkeiten": "Leichtf\u00fcssig, Nachtsicht, Unsterblich",
+    "klasse": "Heiler",
+    "heldenklasse": "/",
+    "gold": 10401,
+    "weapons": [
+      {
+        "name": "Zauberstab",
+        "nah": true,
+        "fern": false,
+        "attributes": "ZB+1",
+        "active": true
+      },
+      {
+        "name": "Kurzbogen",
+        "nah": false,
+        "fern": true,
+        "attributes": "WB+1",
+        "active": false
+      }
+    ],
+    "defense": [
+      {
+        "name": "Runenbestickte Robe",
+        "nah": false,
+        "fern": false,
+        "attributes": "Aura + 1",
+        "active": true
+      },
+      {
+        "name": "Ring",
+        "nah": false,
+        "fern": false,
+        "attributes": "ZB + 1",
+        "active": true
+      },
+      {
+        "name": "Elfenstiefel",
+        "nah": false,
+        "fern": false,
+        "attributes": "Laufen +1",
+        "active": true
+      },
+      {
+        "name": "Kette der Sicht",
+        "nah": false,
+        "fern": false,
+        "attributes": "Magie erspr\u00fcren + 1 ",
+        "active": true
+      }
+    ],
+    "talents": [
+      {
+        "name": "F\u00fcrsorger",
+        "nah": false,
+        "fern": false,
+        "attributes": "ZB + 1",
+        "active": true,
+        "rang": "2"
+      },
+      {
+        "name": "Genesung",
+        "nah": false,
+        "fern": false,
+        "attributes": "K\u00f6rper + 1 ",
+        "active": true,
+        "rang": "1"
+      },
+      {
+        "name": "Wahrnehmung",
+        "nah": false,
+        "fern": false,
+        "attributes": "Bemerken + 1",
+        "active": true,
+        "rang": "1"
+      },
+      {
+        "name": "Reiten",
+        "nah": false,
+        "fern": false,
+        "attributes": "Reiten + 1",
+        "active": true,
+        "rang": "1"
+      },
+      {
+        "name": "Diener des Lichts",
+        "nah": false,
+        "fern": false,
+        "attributes": "Abwehr + 1",
+        "active": true,
+        "rang": "1"
+      }
+    ],
+    "spells": [
+      {
+        "name": "Heilende Hand",
+        "nah": true,
+        "fern": false,
+        "attributes": "ZB + 1",
+        "active": true
+      }
+    ],
+    "inventar": [
+      {
+        "name": "Dietrich 6x",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "Schleuder",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "Kletterausr\u00fcstung",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "Pferd",
+        "attributes": "",
+        "wo": "Stall"
+      },
+      {
+        "name": "Wasserschlauch",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "Heilkraut 12x",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "Decke",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "Feuerholz",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "W\u00fcrfel",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "Fakeln 5x",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "Manatrank 2x",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "Klingeln 39x",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "Netz",
+        "attributes": "",
+        "wo": "Rucksack"
+      },
+      {
+        "name": "Bronzeschl\u00fcssel",
+        "attributes": "",
+        "wo": "Rucksack"
+      }
+    ],
+    "undefined": ""
+  }
+]}

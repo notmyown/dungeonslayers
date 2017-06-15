@@ -28,14 +28,14 @@ function Character() {
   this.name = "<Name>";
   this.exp = 0;
   this.player = "<Spielername>";
-  this.volk = "<Volk w&auml;hlen>";
+  this.volk = "<Volk>";
   this.lp = 0;
   this.tp = 0;
-  this.volksfahigkeiten = "<Fähigkeiten>";
-  this.klasse = "<Klasse wählen>";
-  this.heldenklasse = "/";
+  this.volksfahigkeiten = "<F\u00e4higkeiten>";
+  this.klasse = "<Klasse>";
+  this.heldenklasse = "";
   this.gold = 0;
-  
+
   this.weapons = [];
   this.defense = [];
   this.talents = [];
