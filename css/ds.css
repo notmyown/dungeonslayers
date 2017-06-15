@@ -22,6 +22,10 @@ body {
 	overflow: hidden;
 }
 
+.headline {
+	font-size: 2em;
+}
+
 .ds .menu {
 	height: 30px;
 	border-bottom: 1px solid black;
