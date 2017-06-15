@@ -68,7 +68,7 @@ function DataHandler(_ds) {
       },
       export : function() {
         _ds.data.collect();
-        var text = JSON.stringify([ _ds.character ], null, 2);
+        var text = JSON.stringify({"characters" : [ _ds.character ]}, null, 2);
         text = text.replace(/[\u007F-\uFFFF]/g, function(chr) {
           return "\\u" + ("0000" + chr.charCodeAt(0).toString(16)).substr(-4)
         })
@@ -164,7 +164,6 @@ function DataHandler(_ds) {
           }
           _ds.character.inventar.push(data);
         });
-        console.log(_ds.character);
       },
       defaults : function(character) {
         _ds.input('koerper').set(character.kor);
