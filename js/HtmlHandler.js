@@ -109,6 +109,14 @@ function HtmlHandler(_ds) {
             _ds.data.collect();
             _ds.stats.init();
           });
+          $("#m_print").unbind("click").click(function() {
+            _ds.data.collect();
+            _ds.stats.init();
+            $("body").toggleClass("print");
+            if($("body").hasClass("print")) {
+              window.print();
+            }
+          });
         },
         select : function(id) {
           $("#ds_i_" + id + " input").unbind("change").change(function(val) {
@@ -186,6 +194,70 @@ function HtmlHandler(_ds) {
             _ds.data.clear();
             location.reload();
           });
+        },
+        modal : {
+          close : function() {
+            $("#modal").hide();
+            $("#modal .dialog .before").remove();
+            $("#modal .dialog").prepend("<div class='before'>X</div>");
+            $("#modal .dialog .before").unbind("click").click(function() {
+              $("#modal").hide();
+            });
+          },
+          open : function(id, on) {
+            $(id).unbind(on).on(on, function() {
+              $("#modal").show();
+            });
+          },
+          dialog : {
+            exp : {
+              add : function() {
+                $("#modal .dialog.addexp .button").unbind("click").click(function() {
+                  var add = _ds.input("addexp").num();
+                  _ds.input("addexp").set("");
+                  var orig = _ds.input("exp").num();
+                  _ds.input("exp").set(add + orig);
+                  $("#modal .dialog.addexp .before").click();
+                });
+              }
+            }
+          }
+        },
+        depending : {
+          volk : function() {
+            $("#ds_i_volk INPUT").unbind("change").change(function() {
+              var val = $(this).val();
+              var text =  _ds.input("volksfahigkeiten").text();
+              switch (val) {
+              case "Elf": {
+                text = "Leichtfüssig, Nachtsicht, Unsterblich";
+                break;
+              }
+              case "Mensch": {
+                text = "1 Talentpunkt gratis";
+                break;
+              }
+              case "Zwerg": {
+                text = "Dunkelsicht, Langlebig, Zäh";
+                break;
+              }
+              case "Halbling": {
+                text = "Geschwind, Klein, Leichtfüßig, Magieresistent, Talentiert, Zäher als sie aussehen";
+              }
+              case "Gnom": {
+                text = "Dunkelsicht oder Nachtsicht, Klein, Langlebig, Magisch begabt, Zäh oder Schnell, Zäher als sie aussehen, ggf. Tollpatschig";
+                break;
+              }
+              default:
+                break;
+              }
+              
+              _ds.input("volksfahigkeiten").set(text);
+            });
+            $("#ds_i_volk SELECT").unbind("change").change(function() {
+              _ds.input("volk").set($(this).val());
+            });
+          }
         }
       },
       init : function() {
@@ -198,6 +270,10 @@ function HtmlHandler(_ds) {
         _ds.html.events.input();
         _ds.html.events.gold();
         _ds.html.events.file();
+        _ds.html.events.modal.close();
+        _ds.html.events.modal.open("#ds_i_exp input", "focus");
+        _ds.html.events.modal.dialog.exp.add();
+        _ds.html.events.depending.volk();
       }
 
     }

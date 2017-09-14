@@ -182,6 +182,7 @@ function DataHandler(_ds) {
         _ds.input('tp').set(character.tp);
         _ds.input('player').set(character.player);
         _ds.input('volk').set(character.volk);
+        $("#ds_i_volk SELECT").val(character.volk);
         _ds.input('klasse').set(character.klasse);
         _ds.input('heldenklasse').set(character.heldenklasse);
         _ds.input('volksfahigkeiten').set(character.volksfahigkeiten);

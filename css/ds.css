@@ -1,6 +1,6 @@
 @media only screen and (min-width: 1025px) {
 	.ds {
-	 width: 1024px;
+		width: 1024px;
 	}
 }
 
@@ -13,7 +13,7 @@ body {
 	font-family: woodstamp;
 	padding: 0;
 	margin: 0;
-	 background-image: url(../img/background.jpg);
+	background-image: url(../img/background.jpg);
 }
 
 .ds {
@@ -47,36 +47,48 @@ body {
 }
 
 #m_file {
-  background-image: url(../img/menu_datei.png);
+	background-image: url(../img/menu_datei.png);
 }
+
 #m_werte {
 	background-image: url(../img/menu_werte.png);
 }
+
 #m_waffen {
-  background-image: url(../img/menu_waffen.png);
-}
-#m_defense {
-  background-image: url(../img/menu_defense.png);
-}
-#m_spells {
-  background-image: url(../img/menu_zauber.png);
-}
-#m_talents {
-  background-image: url(../img/menu_talent.png);
-}
-#m_probs {
-  background-image: url(../img/menu_proben.png);
-}
-#m_gold {
-  background-image: url(../img/menu_gold.png);
-}
-#m_inventar {
-  background-image: url(../img/menu_inventar.png);
-}
-#m_settings {
-  background-image: url(../img/menu_settings.png);
+	background-image: url(../img/menu_waffen.png);
 }
 
+#m_defense {
+	background-image: url(../img/menu_defense.png);
+}
+
+#m_spells {
+	background-image: url(../img/menu_zauber.png);
+}
+
+#m_talents {
+	background-image: url(../img/menu_talent.png);
+}
+
+#m_probs {
+	background-image: url(../img/menu_proben.png);
+}
+
+#m_gold {
+	background-image: url(../img/menu_gold.png);
+}
+
+#m_inventar {
+	background-image: url(../img/menu_inventar.png);
+}
+
+#m_settings {
+	background-image: url(../img/menu_settings.png);
+}
+
+#m_print {
+	background-image: url(../img/menu_print.png);
+}
 
 #overlay {
 	position: relative;
@@ -102,7 +114,7 @@ body {
 	display: none !important;
 }
 
-#overlay > DIV {
+#overlay>DIV {
 	width: 100%;
 }
 
@@ -110,13 +122,13 @@ DIV.metawerte {
 	display: none;
 }
 
-#werte .focus{
+#werte .focus {
 	color: red;
 }
 
 DIV#grundwerte {
-  width: 100%;
-  text-align: center;
+	width: 100%;
+	text-align: center;
 }
 
 DIV#attribute {
@@ -211,7 +223,7 @@ DIV#attribute>DIV {
 DIV#attribute #ds_i_lebenskraft {
 	background-image: url(../img/lebenskraft.png);
 	position: relative;
-  top: -1em;
+	top: -1em;
 }
 
 DIV#attribute #ds_i_lebenskraft INPUT, DIV#attribute #ds_i_mana INPUT {
@@ -222,7 +234,7 @@ DIV#attribute #ds_i_lebenskraft SELECT, DIV#attribute #ds_i_mana SELECT
 	{
 	width: 100%;
 	text-align: center;
-	text-align-last:center;
+	text-align-last: center;
 	border: 0;
 	margin: 0;
 	font-size: 2em;
@@ -287,7 +299,17 @@ DIV#attribute #ds_i_zielzauber {
 DIV#attribute #ds_i_mana {
 	background-image: url(../img/mana.png);
 	position: relative;
-top: -1em;
+	top: -1em;
+}
+
+#ds_i_volk INPUT{
+	display: none;
+}
+
+#ds_i_volk SELECT{
+  width: 100%;
+  border: 0px none;
+  background: transparent;
 }
 
 DIV#waffen {
@@ -308,7 +330,6 @@ DIV#probs, DIV#probs TABLE {
 	width: 100%;
 }
 
-
 .outline {
 	color: white;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px
@@ -324,12 +345,15 @@ TABLE {
 TD {
 	border: 1px solid black;
 }
+
 THEAD {
 	background-color: #AAA;
 }
+
 TBODY {
 	background-color: #FAFAFA;
 }
+
 TBODY input {
 	width: 100%;
 	background: transparent;
@@ -340,7 +364,7 @@ TBODY input {
 #gold TABLE {
 	width: 80%;
 	height: 3em;
-	margin:auto;
+	margin: auto;
 	margin-top: 0.5em;
 	border: 0;
 }
@@ -350,29 +374,29 @@ TBODY input {
 	width: 33.3%;
 }
 
-#gold TABLE TD INPUT{
-  border: 0;
-  font-family: Woodstamp;
-  font-size: 3em;
-  text-align: center;
-  background: transparent;
+#gold TABLE TD INPUT {
+	border: 0;
+	font-family: Woodstamp;
+	font-size: 3em;
+	text-align: center;
+	background: transparent;
 }
 
-#gold > TABLE {
+#gold>TABLE {
 	background: none;
 	background-color: transparent;
 	background-image: url(../img/gold.png);
 	background-size: 100% 100%;
-  background-repeat: no-repeat;
-  font-family: Woodstamp;
-  font-size: 3.5em;
-  text-align: center;
-  vertical-align: middle;
+	background-repeat: no-repeat;
+	font-family: Woodstamp;
+	font-size: 3.5em;
+	text-align: center;
+	vertical-align: middle;
 }
 
-#gold > TABLE TBODY {
-  background: none;
-  background-color: transparent;
+#gold>TABLE TBODY {
+	background: none;
+	background-color: transparent;
 }
 
 #gold TABLE.t_calc, #gold TABLE.t_calc tbody {
@@ -395,6 +419,7 @@ TBODY input {
 	cursor: pointer;
 	white-space: nowrap;
 }
+
 #gold TABLE.t_calc TD {
 	width: auto;
 }
@@ -412,15 +437,16 @@ TBODY input {
 #file TABLE TD.big {
 	width: 33.3%;
 }
+
 #file TABLE TD.small {
-  width: 11.1%;
+	width: 11.1%;
 }
 
 #ds_banner img {
-  width:100%;
+	width: 100%;
 }
 
-#file #ds_i_save, #file #ds_i_load, #file #ds_i_new, .button{
+#file #ds_i_save, #file #ds_i_load, #file #ds_i_new, .button {
 	margin: .2em;
 	border: 1px solid black;
 	background-color: #AAA;
@@ -428,7 +454,6 @@ TBODY input {
 	cursor: pointer;
 	font-size: 2em;
 }
-
 
 #file DIV {
 	margin: .3em;
@@ -442,9 +467,63 @@ TBODY input {
 	text-align: center;
 	display: block;
 }
+
 #file .small INPUT, #ds_i_exp INPUT {
-  width: 100%;
-  text-align: center;
+	width: 100%;
+	text-align: center;
 }
 
+#modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: table;
+	width: 100%;
+	height: 100%;
+}
 
+#modal>DIV {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.dialog {
+	width: 15em;
+	border: 1px solid black;
+	background: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dialog .before {
+	content: "X";
+	float: right;
+	margin: 5px;
+	cursor:pointer;
+}
+
+.print  .ds {
+	overflow: unset !important;
+}
+
+.print #overlay {
+	overflow-y: unset;
+	overflow-x: unset;
+	max-height: unset !important;
+	display: block !important;
+}
+.print #overlay > .hidden {
+	display: block !important;
+	margin-top: 50px;
+}
+
+.print #overlay #settings {
+	display: none !important;
+}
+
+body.print{
+	background: white;
+}

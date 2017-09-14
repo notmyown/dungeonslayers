@@ -9,7 +9,7 @@
       "st": "0",
       "stufe": 2,
       "ge": "2",
-      "au": "6",
+      "au": "5",
       "ve": "5",
       "gei": "8",
       "name": "Olwil",
@@ -18,7 +18,7 @@
       "volk": "Elf",
       "lp": 0,
       "tp": 0,
-      "volksfahigkeiten": "Leichtf\u00fcssig, Nachtsicht, Unsterblich",
+      "volksfahigkeiten": "Leichtf\u00c3\u00bcssig, Nachtsicht, Unsterblich",
       "klasse": "Heiler",
       "heldenklasse": "/",
       "gold": 10401,
@@ -106,6 +106,22 @@
           "nah": false,
           "fern": false,
           "attributes": "Abwehr + 1",
+          "active": true,
+          "rang": "1"
+        },
+        {
+          "name": "Leichtf\u00fc\u00dfig",
+          "nah": false,
+          "fern": false,
+          "attributes": "Schleichen + 2",
+          "active": true,
+          "rang": "1"
+        },
+        {
+          "name": "Wildelfen",
+          "nah": false,
+          "fern": false,
+          "attributes": "Abwehr + 2",
           "active": true,
           "rang": "1"
         }

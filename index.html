@@ -24,6 +24,7 @@
 			<div id='m_probs' title='Proben'></div>
 			<div id='m_gold' title='Geld'></div>
 			<div id='m_settings' title='Einstellungen'></div>
+			<div id='m_print' title='Druckversion'></div>
 		</div>
 		<div id='overlay' class='hidden'>
 			<div id='file'>
@@ -41,6 +42,13 @@
 					<tr>
 						<td class='big'><div id='ds_i_volk'>
 								<span>Volk:</span><input />
+								<select>
+								  <option>Mensch</option>
+								  <option>Zwerg</option>
+								  <option>Elf</option>
+								  <option>Gnom</option>
+								  <option>Halbling</option>
+								</select>
 							</div></td>
 						<td class='small'><div id='ds_i_stufe'>
 								<input /><span>Stufe</span>
@@ -147,7 +155,7 @@
 				</div>
 			</div>
 			<div id='waffen' class='inventory'>
-			  <span class="headline">Waffen</span>
+				<span class="headline">Waffen</span>
 				<table>
 					<thead>
 						<tr>
@@ -165,7 +173,7 @@
 				<input class='newrow nr_waffen' type='button' value='Neue Zeile' />
 			</div>
 			<div id='defense' class='inventory'>
-			  <span class="headline">R&uuml;stung</span>
+				<span class="headline">R&uuml;stung</span>
 				<table>
 					<thead>
 						<tr>
@@ -181,7 +189,7 @@
 				<input class='newrow nr_defense' type='button' value='Neue Zeile' />
 			</div>
 			<div id='spells' class='inventory'>
-			  <span class="headline">Zauber</span>
+				<span class="headline">Zauber</span>
 				<table>
 					<thead>
 						<tr>
@@ -199,7 +207,7 @@
 				<input class='newrow nr_spells' type='button' value='Neue Zeile' />
 			</div>
 			<div id='talents' class='inventory'>
-			  <span class="headline">Talente</span>
+				<span class="headline">Talente</span>
 				<table>
 					<thead>
 						<tr>
@@ -216,7 +224,7 @@
 				<input class='newrow nr_talents' type='button' value='Neue Zeile' />
 			</div>
 			<div id='inventar' class='inventory'>
-			  <span class="headline">Ausr&uuml;stung und Artefakte</span> 
+				<span class="headline">Ausr&uuml;stung und Artefakte</span>
 				<table>
 					<thead>
 						<tr>
@@ -232,7 +240,7 @@
 				<input class='newrow nr_inventar' type='button' value='Neue Zeile' />
 			</div>
 			<div id='probs'>
-			  <span class="headline">Proben</span>
+				<span class="headline">Proben</span>
 				<table>
 					<thead>
 						<tr>
@@ -371,7 +379,7 @@
 				</table>
 			</div>
 			<div id='gold'>
-			  <span class="headline">Beute und Verm&ouml;gen</span>
+				<span class="headline">Beute und Verm&ouml;gen</span>
 				<table>
 					<tbody>
 						<tr class=''>
@@ -396,14 +404,14 @@
 				</table>
 			</div>
 			<div id='settings' class='inventory'>
-			  <span class="headline">Einstellungen</span>
+				<span class="headline">Einstellungen</span>
 				<table>
 					<tbody>
-					<tr>
-              <td>
-                <div class='button' id='ds_i_new'>Zur&uuml;cksetzen</div>
-              </td>
-            </tr>
+						<tr>
+							<td>
+								<div class='button' id='ds_i_new'>Zur&uuml;cksetzen</div>
+							</td>
+						</tr>
 						<tr>
 							<td>
 								<div class='button' id='ds_i_save'>Speichern</div>
@@ -423,6 +431,16 @@
 						</tr>
 					</tbody>
 				</table>
+			</div>
+		</div>
+		<div id='modal'>
+			<div>
+				<div class='addexp dialog'>
+				<table>
+				<tr><td id='ds_i_addexp'><input /></td><td>EXP</td></tr>
+				<tr><td colspan=2><div class='button'>Hinzuf&uuml;gen</div></td></tr>
+				</table>
+				</div>
 			</div>
 		</div>
 	</div>
