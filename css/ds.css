@@ -321,14 +321,14 @@ DIV#attribute #ds_i_mana {
 	top: -1em;
 }
 
-#ds_i_volk INPUT{
+#ds_i_volk INPUT {
 	display: none;
 }
 
-#ds_i_volk SELECT{
-  width: 100%;
-  border: 0px none;
-  background: transparent;
+#ds_i_volk SELECT {
+	width: 100%;
+	border: 0px none;
+	background: transparent;
 }
 
 DIV#waffen {
@@ -339,7 +339,7 @@ DIV#probs TBODY {
 	font-family: Calibri;
 }
 
-DIV#probs TBODY .outline {
+DIV#probs TBODY .outline, .stufe {
 	font-family: Woodstamp;
 	font-size: 30px;
 	text-align: center;
@@ -349,7 +349,7 @@ DIV#probs, DIV#probs TABLE {
 	width: 100%;
 }
 
-.outline {
+.outline, .stufe {
 	color: white;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px
 		0 #000;
@@ -523,7 +523,7 @@ TBODY input {
 	content: "X";
 	float: right;
 	margin: 5px;
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .print  .ds {
@@ -536,7 +536,8 @@ TBODY input {
 	max-height: unset !important;
 	display: block !important;
 }
-.print #overlay > .hidden {
+
+.print #overlay>.hidden {
 	display: block !important;
 }
 
@@ -560,13 +561,13 @@ TBODY input {
 	display: none !important;
 }
 
-body.print{
+body.print {
 	background: white;
 }
 
 #ds_i_steckbrief TABLE {
 	margin: 0;
-	font-size:0.8em;
+	font-size: 0.8em;
 }
 
 #ds_i_steckbrief TABLE#steckbrief SPAN {
@@ -585,7 +586,7 @@ body.print{
 	background: white;
 }
 
-#chars TBODY, #chars TABLE, #chars TD{
+#chars TBODY, #chars TABLE, #chars TD {
 	border: 0;
 	background: transparent;
 }
@@ -618,6 +619,100 @@ body.print{
 	width: 100%;
 	min-height: 50px;
 	font-size: 0.8em;
-	 resize: none;
-	 
+	resize: none;
+}
+
+LABEL.checkbox {
+	display: block;
+	position: relative;
+	padding-left: 1.2em;
+	margin-bottom: 1.2em;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+LABEL.checkbox input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	text-align: center;
+}
+
+LABEL.checkbox:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+
+LABEL.checkbox input ~ .checkmark:before {
+	content: "";
+	color: #999;
+}
+
+LABEL.checkbox input:checked ~ .checkmark:before {
+	content: "";
+}
+
+LABEL.checkbox input:checked ~ .checkmark {
+	background-color: #aaa;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+LABEL.checkbox .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+LABEL.checkbox input:checked ~ .checkmark:after {
+	display: block;
+	color: red;
+}
+
+/* Style the checkmark/indicator */
+LABEL.checkbox .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+DIV.del {
+	font-size: 22px;
+	height: 25px;
+	width: 25px;
+	text-align: center;
+	background-color: #aaa;
+	color: red;
+	cursor: pointer;
+}
+
+INPUT.newrow, INPUT.nr_chars {
+	width: 6em;
+	font-size: 1em;
+	border: 1px solid;
+	margin-top: 0.5em;
+	background: white;
+	cursor: pointer;
+}
+
+INPUT.nr_chars {
+	width: 9em;
 }

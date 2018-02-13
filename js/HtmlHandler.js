@@ -27,15 +27,15 @@ function HtmlHandler(_ds) {
 						_ds.html.weapons
 								.append("<tr><td><input class='name' type=text value='"
 										+ entry.name
-										+ "'></td><td><input type='checkbox' class='nah' "
+										+ "'></td><td><label class='checkbox'><input type='checkbox' class='nah' "
 										+ (entry.nah ? "checked" : "")
-										+ "/></td><td><input type='checkbox' class='fern' + "
+										+ "/><span class='checkmark'></span></label></td><td><label class='checkbox'><input type='checkbox' class='fern' + "
 										+ (entry.fern ? "checked" : "")
-										+ " /></td><td><input class='Eigenschaften' type=text value='"
+										+ " /><span class='checkmark'></span></label></td><td><input class='Eigenschaften' type=text value='"
 										+ entry.attributes
-										+ "'></td><td><input class='active' type='checkbox' "
+										+ "'></td><td><label class='checkbox'><input class='active' type='checkbox' "
 										+ (entry.active ? "checked" : "")
-										+ "/></td><td><div class='del'>X</div></td></tr>");
+										+ "/><span class='checkmark'></span></label></td><td><div class='del'>X</div></td></tr>");
 					});
 			}
 			_ds.html.defense.find("TR").remove();
@@ -47,9 +47,9 @@ function HtmlHandler(_ds) {
 										+ entry.name
 										+ "'></td><td><input class='Eigenschaften' type=text value='"
 										+ entry.attributes
-										+ "'></td><td><input class='active' type='checkbox' "
+										+ "'></td><td><label class='checkbox'><input class='active' type='checkbox' "
 										+ (entry.active ? "checked" : "")
-										+ "/></td><td><div class='del'>X</div></td></tr>");
+										+ "/><span class='checkmark'></span></label></td><td><div class='del'>X</div></td></tr>");
 					});
 			}
 			_ds.html.talents.find("TR").remove();
@@ -63,9 +63,9 @@ function HtmlHandler(_ds) {
 										+ entry.attributes
 										+ "'></td><td><input class='stufe' type=text value='"
 										+ entry.rang
-										+ "'></td><td><input class='active' type='checkbox' "
+										+ "'></td><td><label class='checkbox'><input class='active' type='checkbox' "
 										+ (entry.active ? "checked" : "")
-										+ "/></td><td><div class='del'>X</div></td></tr>");
+										+ "/><span class='checkmark'></span></label></td><td><div class='del'>X</div></td></tr>");
 					});
 			}
 			_ds.html.spells.find("TR").remove();
@@ -75,15 +75,15 @@ function HtmlHandler(_ds) {
 						_ds.html.spells
 								.append("<tr><td><input class='name' type=text value='"
 										+ entry.name
-										+ "'></td><td><input type='checkbox' class='nah' "
+										+ "'></td><td><label class='checkbox'><input type='checkbox' class='nah' "
 										+ (entry.nah ? "checked" : "")
-										+ "/></td><td><input type='checkbox' class='fern' + "
+										+ "/><span class='checkmark'></span></label></td><td><label class='checkbox'><input type='checkbox' class='fern' + "
 										+ (entry.fern ? "checked" : "")
-										+ " /></td><td><input class='Eigenschaften' type=text value='"
+										+ " /><span class='checkmark'></span></label></td><td><input class='Eigenschaften' type=text value='"
 										+ entry.attributes
-										+ "'></td><td><input class='active' type='checkbox' "
+										+ "'></td><td><label class='checkbox'><input class='active' type='checkbox' "
 										+ (entry.active ? "checked" : "")
-										+ "/></td><td><div class='del'>X</div></td></tr>");
+										+ "/><span class='checkmark'></span></label></td><td><div class='del'>X</div></td></tr>");
 					});
 			}
 			_ds.html.inventar.find("TR").remove();
@@ -202,16 +202,16 @@ function HtmlHandler(_ds) {
 									var html = "";
 									var deleteTD = "<td><div class='del'>X</div></td>";
 									if (id === "#waffen") {
-										html = "<tr><td><input class='name' type=text value=''></td><td><input type='checkbox' class='nah' /></td><td><input type='checkbox' class='fern' /></td><td><input class='Eigenschaften' type=text value=''></td><td><input class='active' type='checkbox'/></td>"
+										html = "<tr><td><input class='name' type=text value=''></td><td><label class='checkbox'><input type='checkbox' class='nah' /><span class='checkmark'></span></label></td><td><label class='checkbox'><input type='checkbox' class='fern' /><span class='checkmark'></span></label></td><td><input class='Eigenschaften' type=text value=''></td><td><label class='checkbox'><input class='active' type='checkbox'/><span class='checkmark'></span></label></td>"
 												+ deleteTD + "</tr>";
 									} else if (id === "#defense") {
-										html = "<tr><td><input class='name' type=text value=''></td><td><input class='Eigenschaften' type=text value=''></td><td><input class='active' type='checkbox'/></td>"
+										html = "<tr><td><input class='name' type=text value=''></td><td><input class='Eigenschaften' type=text value=''></td><td><label class='checkbox'><input class='active' type='checkbox'/><span class='checkmark'></span></label></td>"
 												+ deleteTD + "</tr>";
 									} else if (id === "#spells") {
-										html = "<tr><td><input class='name' type=text value=''></td><td><input type='checkbox' class='nah' /></td><td><input type='checkbox' class='fern' /></td><td><input class='Eigenschaften' type=text value=''></td><td><input class='active' type='checkbox'/></td>"
+										html = "<tr><td><input class='name' type=text value=''></td><td><label class='checkbox'><input type='checkbox' class='nah' /><span class='checkmark'></span></label></td><td><label class='checkbox'><input type='checkbox' class='fern' /><span class='checkmark'></span></label></td><td><input class='Eigenschaften' type=text value=''></td><td><label class='checkbox'><input class='active' type='checkbox'/><span class='checkmark'></span></label></td>"
 												+ deleteTD + "</tr>";
 									} else if (id === "#talents") {
-										html = "<tr><td><input class='name' type=text value=''></td><td><input class='Eigenschaften' type=text value=''></td><td><input class='stufe' type=text value=''></td><td><input class='active' type='checkbox'/></td>"
+										html = "<tr><td><input class='name' type=text value=''></td><td><input class='Eigenschaften' type=text value=''></td><td><input class='stufe' type=text value=''></td><td><label class='checkbox'><input class='active' type='checkbox'/><span class='checkmark'></span></label></td>"
 												+ deleteTD + "</tr>";
 									} else if (id === "#inventar") {
 										html = "<tr><td><input class='name' type=text value=''></td><td><input class='Wo' type=text value=''></td><td><input class='Eigenschaften' type=text value=''></td>"
