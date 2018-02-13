@@ -11,9 +11,15 @@
 
 body {
 	font-family: woodstamp;
+	font-size: 16px;
 	padding: 0;
 	margin: 0;
 	background-image: url(../img/background.jpg);
+}
+
+INPUT {
+	font-family: calibri;
+	font-size: 16px;
 }
 
 .ds {
@@ -378,7 +384,6 @@ TBODY input {
 	background: transparent;
 	border: 0;
 	margin: 0;
-	font-size: 0.8em;
 }
 
 #gold TABLE {
