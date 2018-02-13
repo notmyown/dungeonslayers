@@ -78,7 +78,8 @@ function DataHandler(_ds) {
 		export : function() {
 			_ds.data.collect();
 			var text = JSON.stringify({
-				"characters" : [ _ds.character ]
+				"characters" : _ds.data.characters,
+				"index" : _ds.data.index
 			}, null, 2);
 			text = text.replace(/[\u007F-\uFFFF]/g, function(chr) {
 				return "\\u"
@@ -230,6 +231,7 @@ function DataHandler(_ds) {
 				}
 				_ds.character.diary.push(data);
 			});
+			_ds.data.characters[_ds.data.index] = _ds.character;
 		},
 		defaults : function(character) {
 
