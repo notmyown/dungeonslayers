@@ -26,5 +26,5 @@
   }
 
   this.data.load();
-  $("#m_file").trigger("click");
+  $("#m_chars").trigger("click");
 }

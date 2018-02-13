@@ -35,12 +35,25 @@ function Character() {
   this.klasse = "<Klasse>";
   this.heldenklasse = "";
   this.gold = 0;
+  
+  this.geschlecht = "";
+  this.geburtsort = "";
+  this.geburtstag = "";
+  this.alter = 0;
+  this.grosse = 0;
+  this.haarfarbe = "";
+  this.augenfarbe = "";
+  this.besonderes = "";
+  this.sprachen = "";
+  this.schriftzeichen ="";
 
   this.weapons = [];
   this.defense = [];
   this.talents = [];
   this.spells = [];
   this.inventar = [];
+  this.begleiter = [];
+  this.diary = [];
 
   this.print = function() {
     //

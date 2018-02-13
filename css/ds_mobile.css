@@ -1,8 +1,3 @@
-@media only screen and (min-width: 1025px) {
-	.ds {
-		width: 1024px;
-	}
-}
 
 @font-face {
 	font-family: "woodstamp";
@@ -13,7 +8,7 @@ body {
 	font-family: woodstamp;
 	padding: 0;
 	margin: 0;
-	background-image: url(../img/background.jpg);
+	background-image: url(../img/mobile/caerabg.gif);
 }
 
 .ds {
@@ -21,6 +16,23 @@ body {
 	margin: 1em auto;
 	overflow: hidden;
 }
+
+.ds .menu::before {
+	content: " ";
+	width: 48px;
+	height: 48px;
+    background-image: url(../img/mobile/menu.png);
+	display: block;
+}
+
+.ds .menu::after {
+	content: " ";
+	width: 30%;
+	height: 100%;
+    background-image: url(../img/mobile/menu.png);
+	display: block;
+}
+
 
 .headline {
 	font-size: 2em;
@@ -46,27 +58,12 @@ body {
 	border: 1px solid black;
 }
 
-.ds .menu>SPAN {
-	font-size: 2em;
-	display: block;
-	padding-left: 1em;
-	float: right;
-}
-
-#m_chars {
-	background-image: url(../img/menu_chars.png);
-}
-
 #m_file {
 	background-image: url(../img/menu_datei.png);
 }
 
 #m_werte {
 	background-image: url(../img/menu_werte.png);
-}
-
-#m_begleiter {
-	background-image: url(../img/menu_begleiter.png);
 }
 
 #m_waffen {
@@ -87,10 +84,6 @@ body {
 
 #m_probs {
 	background-image: url(../img/menu_proben.png);
-}
-
-#m_diary {
-	background-image: url(../img/menu_logbook.png);
 }
 
 #m_gold {
@@ -538,22 +531,7 @@ TBODY input {
 }
 .print #overlay > .hidden {
 	display: block !important;
-}
-
-.print input.newrow {
-	display: none !important;
-}
-
-.print .t_calc {
-	display: none !important;
-}
-
-.print DIV.del {
-	visibility: hidden;
-}
-
-.print #overlay #chars {
-	display: none !important;
+	margin-top: 50px;
 }
 
 .print #overlay #settings {
@@ -562,62 +540,4 @@ TBODY input {
 
 body.print{
 	background: white;
-}
-
-#ds_i_steckbrief TABLE {
-	margin: 0;
-	font-size:0.8em;
-}
-
-#ds_i_steckbrief TABLE#steckbrief SPAN {
-	width: auto;
-}
-
-#chars TD {
-	font-size: 2em;
-}
-
-#chars TD INPUT {
-	width: 6em;
-	font-size: 0.5em;
-	border: 1px solid;
-	margin: 2px;
-	background: white;
-}
-
-#chars TBODY, #chars TABLE, #chars TD{
-	border: 0;
-	background: transparent;
-}
-
-#begleiter TABLE THEAD TD {
-	text-align: center;
-}
-
-#begleiter TABLE .text {
-	width: 25%;
-	text-align: left;
-}
-
-#begleiter TABLE IMG {
-	width: 20px;
-	height: 20px;
-}
-
-#diary TD INPUT {
-	font-family: woodstamp;
-	border: 0;
-	background: transparent;
-	font-size: 1.5em;
-}
-
-#diary TD TEXTAREA {
-	font-family: Arial;
-	border: 0;
-	background: transparent;
-	width: 100%;
-	min-height: 50px;
-	font-size: 0.8em;
-	 resize: none;
-	 
 }

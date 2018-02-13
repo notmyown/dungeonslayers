@@ -14,19 +14,31 @@
 <body>
 	<div class='ds'>
 		<div class='menu'>
+			<div id='m_chars' title='Meine Characktere'></div>
 			<div id='m_file' title='Datei'></div>
 			<div id='m_werte' title='Werte'></div>
 			<div id='m_waffen' title='Waffen'></div>
 			<div id='m_defense' title='R&uuml;stung'></div>
 			<div id='m_spells' title='Zauber'></div>
-			<div id='m_talents' titel='Talente'></div>
+			<div id='m_talents' title='Talente'></div>
+			<div id='m_begleiter' title='Begleiter'></div>
 			<div id='m_inventar' title='Inventar'></div>
 			<div id='m_probs' title='Proben'></div>
 			<div id='m_gold' title='Geld'></div>
+			<div id='m_diary' title='Tagebuch'></div>
 			<div id='m_settings' title='Einstellungen'></div>
 			<div id='m_print' title='Druckversion'></div>
+			<span>...</span>
 		</div>
 		<div id='overlay' class='hidden'>
+		    <div id='chars'>
+				<span class="headline">Meine Charaktere</span>
+				<table>
+					<tbody>
+					</tbody>
+				</table>
+				<input class='nr_chars' type='button' value='Neuer Charakter' />
+			</div>
 			<div id='file'>
 				<table>
 					<tr>
@@ -41,13 +53,12 @@
 					</tr>
 					<tr>
 						<td class='big'><div id='ds_i_volk'>
-								<span>Volk:</span><input />
-								<select>
-								  <option>Mensch</option>
-								  <option>Zwerg</option>
-								  <option>Elf</option>
-								  <option>Gnom</option>
-								  <option>Halbling</option>
+								<span>Volk:</span><input /> <select>
+									<option>Mensch</option>
+									<option>Zwerg</option>
+									<option>Elf</option>
+									<option>Gnom</option>
+									<option>Halbling</option>
 								</select>
 							</div></td>
 						<td class='small'><div id='ds_i_stufe'>
@@ -72,6 +83,115 @@
 							</div></td>
 						<td class='big'><div id='ds_i_heldenklasse'>
 								<span>Heldenklasse:</span><input />
+							</div></td>
+					</tr>
+					<tr>
+						<td class='big' colspan=5><div id='ds_i_steckbrief'>
+								Steckbrief
+								<table id='steckbrief'>
+									<tr>
+										<td>
+											<table>
+												<tr>
+													<td class='small'><label for="ds_i_steckbrief_geschlecht">Geschlecht:</label></td>
+													<td><input id="ds_i_steckbrief_geschlecht" /></td>
+												</tr>
+											</table>
+										</td>
+										<td>
+											<table>
+												<tr>
+													<td class='small'><label for="ds_i_steckbrief_geburtsort">Geburtsort:</label></td>
+													<td><input id="ds_i_steckbrief_geburtsort" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<table>
+												<tr>
+													<td class='small'><label for="ds_i_steckbrief_geburtstag">Geburtstag:</label></td>
+													<td><input id="ds_i_steckbrief_geburtstag" /></td>
+												</tr>
+											</table>
+										</td>
+										<td>
+											<table>
+												<tr>
+													<td class='small'><label for="ds_i_steckbrief_alter">Alter:</label></td>
+													<td><input id="ds_i_steckbrief_alter" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<table>
+												<tr>
+													<td class='small'><label for="ds_i_steckbrief_grosse">Gr&ouml;sse:</label></td>
+													<td><input id="ds_i_steckbrief_grosse" /></td>
+												</tr>
+											</table>
+										</td>
+										<td>
+											<table>
+												<tr>
+													<td class='small'><label for="ds_i_steckbrief_gewicht">Gewicht:</label></td>
+													<td><input id="ds_i_steckbrief_gewicht" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<table>
+												<tr>
+													<td class='small'><label for="ds_i_steckbrief_haarfarbe">Haarfarbe:</label></td>
+													<td><input id="ds_i_steckbrief_haarfarbe" /></td>
+												</tr>
+											</table>
+										</td>
+										<td>
+											<table>
+												<tr>
+													<td class='small'><label for="ds_i_steckbrief_augenfarbe">Augenfarbe:</label></td>
+													<td><input id="ds_i_steckbrief_augenfarbe" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td colspan=2>
+											<table>
+												<tr>
+													<td class='small'><label for="ds_i_steckbrief_besonderes">Besonderes:</label></td>
+													<td><input id="ds_i_steckbrief_besonderes" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td colspan=2>
+											<table>
+												<tr>
+													<td class='small'><label for="ds_i_steckbrief_sprachen">Sprachen:</label></td>
+													<td><input id="ds_i_steckbrief_sprachen" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td colspan=2>
+											<table>
+												<tr>
+													<td class='small'><label for="ds_i_steckbrief_schriftzeichen">Schriftzeichen:</label></td>
+													<td><input id="ds_i_steckbrief_schriftzeichen" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
 							</div></td>
 					</tr>
 				</table>
@@ -222,6 +342,38 @@
 					</tbody>
 				</table>
 				<input class='newrow nr_talents' type='button' value='Neue Zeile' />
+			</div>
+			<div id='begleiter'>
+				<span class="headline">Begleiter</span>
+				<table>
+					<thead>
+						<tr>
+							<td class='text'>Name</td>
+							<td class='text'>Art</td>
+							<td>K&Ouml;R</td>
+							<td>AGI</td>
+							<td>GEI</td>
+							<td>ST</td>
+							<td>H&Auml;</td>
+							<td>BE</td>
+							<td>GE</td>
+							<td>VE</td>
+							<td>AU</td>
+							<td><img src='./img/lebenskraft.png'></td>
+							<td><img src='./img/abwehr.png'></td>
+							<td><img src='./img/initiative.png'></td>
+							<td><img src='./img/laufen.png'></td>
+							<td><img src='./img/schlagen.png'></td>
+							<td><img src='./img/schiessen.png'></td>
+							<td><img src='./img/zaubern.png'></td>
+							<td><img src='./img/zielzauber.png'></td>
+							<td>x</td>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+				<input class='newrow nr_begleiter' type='button' value='Neue Zeile' />
 			</div>
 			<div id='inventar' class='inventory'>
 				<span class="headline">Ausr&uuml;stung und Artefakte</span>
@@ -403,6 +555,14 @@
 					</tr>
 				</table>
 			</div>
+			<div id='diary'>
+				<span class="headline">Logbuch</span>
+				<table>
+					<tbody>
+					</tbody>
+				</table>
+				<input class='newrow nr_diary' type='button' value='Neuer Eintrag' />
+			</div>
 			<div id='settings' class='inventory'>
 				<span class="headline">Einstellungen</span>
 				<table>
@@ -436,19 +596,24 @@
 		<div id='modal'>
 			<div>
 				<div class='addexp dialog'>
-				<table>
-				<tr><td id='ds_i_addexp'><input /></td><td>EXP</td></tr>
-				<tr><td colspan=2><div class='button'>Hinzuf&uuml;gen</div></td></tr>
-				</table>
+					<table>
+						<tr>
+							<td id='ds_i_addexp'><input /></td>
+							<td>EXP</td>
+						</tr>
+						<tr>
+							<td colspan=2><div class='button'>Hinzuf&uuml;gen</div></td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
 	</div>
 	<script>
-    var ds;
-    $(document).ready(function() {
-      ds = new DS();
-    });
-  </script>
+		var ds;
+		$(document).ready(function() {
+			ds = new DS();
+		});
+	</script>
 </body>
 </html>
