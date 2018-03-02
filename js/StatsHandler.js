@@ -168,6 +168,16 @@ function StatsHandler(_ds) {
           _ds.stats.probes.verbergen();
           _ds.stats.probes.verstandigen();
           _ds.stats.probes.wissen();
+          _ds.stats.probes.magieerspuren();
+          _ds.stats.probes.magieidentifizieren();
+        },
+        magieerspuren : function() {
+            var val = _ds.input("geist").num() + _ds.input('aura').num();
+            $("#p_magieerspuren").html(val);
+          },
+         magieidentifizieren : function() {
+          var val = _ds.input("geist").num() + _ds.input('verstand').num();
+          $("#p_magieidentifizieren").html(val);
         },
         bemerken : function() {
           var val = _ds.input("geist").num() + _ds.input('verstand').num();

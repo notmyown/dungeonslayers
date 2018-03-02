@@ -188,13 +188,15 @@ INPUT.newrow, INPUT.nr_chars {
 
 #waffen THEAD TR,
 #defense THEAD TR,
-#spells THEAD TR {
+#spells THEAD TR,
+#talents THEAD TR {
 	display: none;
 }
 
 #waffen TBODY TR,
 #defense TBODY TR,
-#spells TBODY TR {
+#spells TBODY TR,
+#talents TBODY TR {
 	display: block;
 	border: 1px solid black;
 	margin: 5px;
@@ -205,14 +207,28 @@ INPUT.newrow, INPUT.nr_chars {
 
 #waffen TBODY TR TD:nth-last-child(6),
 #defense TBODY TR TD:nth-last-child(4),
-#spells TBODY TR TD:nth-last-child(6) {
+#spells TBODY TR TD:nth-last-child(6),
+#talents TBODY TR TD:nth-last-child(5),
+#talents TBODY TR TD:nth-last-child(3) {
 	display: block;
 	position: relative;
 }
 
+#talents TBODY TR TD:nth-last-child(5) {
+	width: 70%;
+}
+#talents TBODY TR TD:nth-last-child(3) {
+	width: 26%;
+	position: absolute;
+	top: 5px;
+	left: 68%;
+}
+
 #waffen TBODY TR TD:nth-last-child(6)::before,
 #defense TBODY TR TD:nth-last-child(4)::before,
-#spells TBODY TR TD:nth-last-child(6)::before {
+#spells TBODY TR TD:nth-last-child(6)::before,
+#talents TBODY TR TD:nth-last-child(5)::before,
+#talents TBODY TR TD:nth-last-child(3)::before {
 	content: 'Name:';
 	position: absolute;
 	top: 4px;
@@ -220,15 +236,26 @@ INPUT.newrow, INPUT.nr_chars {
 	color: darkgrey;
 }
 
+#talents TBODY TR TD:nth-last-child(3)::before {
+	content: 'Stufe:';
+}
+
 #waffen TBODY TR TD:nth-last-child(6) INPUT,
 #defense TBODY TR TD:nth-last-child(4) INPUT,
-#spells TBODY TR TD:nth-last-child(6) INPUT {
+#spells TBODY TR TD:nth-last-child(6) INPUT,
+#talents TBODY TR TD:nth-last-child(5) INPUT,
+#talents TBODY TR TD:nth-last-child(3) INPUT {
 	width: 80%;
     padding-left: 15%;
     background: none;
     border: 1px solid lightgrey;
     font-family: calibri;
 	font-size: 16px;
+}
+
+#talents TBODY TR TD:nth-last-child(3) INPUT {
+	padding-left: 50%;
+	width: 46%;
 }
 
 #waffen TBODY TR TD:nth-last-child(5),
@@ -301,13 +328,15 @@ INPUT.newrow, INPUT.nr_chars {
 
 #waffen TBODY TR TD:nth-last-child(3),
 #defense TBODY TR TD:nth-last-child(3),
-#spells TBODY TR TD:nth-last-child(3) {
+#spells TBODY TR TD:nth-last-child(3),
+#talents TBODY TR TD:nth-last-child(4) {
 	display: block;
 	position: relative;
 }
 #waffen TBODY TR TD:nth-last-child(3)::before,
 #defense TBODY TR TD:nth-last-child(3)::before,
-#spells TBODY TR TD:nth-last-child(3)::before {
+#spells TBODY TR TD:nth-last-child(3)::before,
+#talents TBODY TR TD:nth-last-child(4)::before {
 	content: 'Effekt:';
 	position: absolute;
 	top: 4px;
@@ -317,7 +346,8 @@ INPUT.newrow, INPUT.nr_chars {
 
 #waffen TBODY TR TD:nth-last-child(3) INPUT,
 #defense TBODY TR TD:nth-last-child(3) INPUT,
-#spells TBODY TR TD:nth-last-child(3) INPUT {
+#spells TBODY TR TD:nth-last-child(3) INPUT,
+#talents TBODY TR TD:nth-last-child(4) INPUT {
 	width: 80%;
     padding-left: 15%;
     background: none;
@@ -328,7 +358,8 @@ INPUT.newrow, INPUT.nr_chars {
 
 #waffen TBODY TR TD:nth-last-child(2),
 #defense TBODY TR TD:nth-last-child(2),
-#spells TBODY TR TD:nth-last-child(2) {
+#spells TBODY TR TD:nth-last-child(2),
+#talents TBODY TR TD:nth-last-child(2) {
 	display: inline-block;
 	position: relative;
 	width: 94%;
@@ -338,7 +369,8 @@ INPUT.newrow, INPUT.nr_chars {
 
 #waffen TBODY TR TD:nth-last-child(2)::before,
 #defense TBODY TR TD:nth-last-child(2)::before,
-#spells TBODY TR TD:nth-last-child(2)::before {
+#spells TBODY TR TD:nth-last-child(2)::before,
+#talents TBODY TR TD:nth-last-child(2)::before {
 	content: 'Ausgerüsstet:';
 	color: darkgrey;
 	float: left;
@@ -349,26 +381,30 @@ INPUT.newrow, INPUT.nr_chars {
 
 #waffen TBODY TR TD:nth-last-child(2) label,
 #defense TBODY TR TD:nth-last-child(2) label,
-#spells TBODY TR TD:nth-last-child(2) label {
+#spells TBODY TR TD:nth-last-child(2) label,
+#talents TBODY TR TD:nth-last-child(2) label {
 	float: left;
 	width: 65%;
 }
 
 #waffen TBODY TR TD:nth-last-child(2) label .checkmark,
 #defense TBODY TR TD:nth-last-child(2) label .checkmark,
-#spells TBODY TR TD:nth-last-child(2) label .checkmark {
+#spells TBODY TR TD:nth-last-child(2) label .checkmark,
+#talents TBODY TR TD:nth-last-child(2) label .checkmark {
  	width: 100%;
 }
 
 #waffen TBODY TR TD:nth-last-child(2) label .checkmark::after,
 #defense TBODY TR TD:nth-last-child(2) label .checkmark::after,
-#spells TBODY TR TD:nth-last-child(2) label .checkmark::after {
+#spells TBODY TR TD:nth-last-child(2) label .checkmark::after,
+#talents TBODY TR TD:nth-last-child(2) label .checkmark::after {
 	left: 46%;
 }
 
 #waffen TBODY TR TD:nth-last-child(1),
 #defense TBODY TR TD:nth-last-child(1),
-#spells TBODY TR TD:nth-last-child(1) {
+#spells TBODY TR TD:nth-last-child(1),
+#talents TBODY TR TD:nth-last-child(1) {
 	display: block;
 	position: absolute;
 	border: 1px solid lightgray;
@@ -381,4 +417,16 @@ INPUT.newrow, INPUT.nr_chars {
 	cursor: pointer;
 }
 
+#probs TABLE {
+	width: 95%;
+	font-size: 21px;
+	margin-left: 2%;
+}
 
+#probs TABLE THEAD TD {
+	color: lightgrey;
+}
+
+#probs TABLE .outline {
+	text-align: center;	
+}
