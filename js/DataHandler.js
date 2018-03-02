@@ -20,6 +20,9 @@ function DataHandler(_ds) {
 				} else {
 					_ds.data.characters.push(new Character());
 				}
+			} else if (!obj) {
+				_ds.data.characters = [];
+				_ds.data.characters.push(new Character());
 			}
 
 			var idx = _ds.data.index;
