@@ -1,0 +1,129 @@
+#m_chars {
+	background-image: url(../img/menu_chars.png);
+}
+
+#m_file {
+	background-image: url(../img/menu_datei.png);
+}
+
+#m_werte {
+	background-image: url(../img/menu_werte.png);
+}
+
+#m_begleiter {
+	background-image: url(../img/menu_begleiter.png);
+}
+
+#m_waffen {
+	background-image: url(../img/menu_waffen.png);
+}
+
+#m_defense {
+	background-image: url(../img/menu_defense.png);
+}
+
+#m_spells {
+	background-image: url(../img/menu_zauber.png);
+}
+
+#m_talents {
+	background-image: url(../img/menu_talent.png);
+}
+
+#m_probs {
+	background-image: url(../img/menu_proben.png);
+}
+
+#m_diary {
+	background-image: url(../img/menu_logbook.png);
+}
+
+#m_gold {
+	background-image: url(../img/menu_gold.png);
+}
+
+#m_inventar {
+	background-image: url(../img/menu_inventar.png);
+}
+
+#m_settings {
+	background-image: url(../img/menu_settings.png);
+}
+
+#m_print {
+	background-image: url(../img/menu_print.png);
+}
+
+
+/* Checkboxen */
+LABEL.checkbox {
+	display: block;
+	position: relative;
+	padding-left: 1.2em;
+	margin-bottom: 1.2em;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+LABEL.checkbox input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	text-align: center;
+}
+
+LABEL.checkbox:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+
+LABEL.checkbox input ~ .checkmark:before {
+	content: "";
+	color: #999;
+}
+
+LABEL.checkbox input:checked ~ .checkmark:before {
+	content: "";
+}
+
+LABEL.checkbox input:checked ~ .checkmark {
+	background-color: #aaa;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+LABEL.checkbox .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+LABEL.checkbox input:checked ~ .checkmark:after {
+	display: block;
+	color: red;
+}
+
+/* Style the checkmark/indicator */
+LABEL.checkbox .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}

@@ -237,6 +237,8 @@ function HtmlHandler(_ds) {
 					_ds.stats.init();
 					$("body").removeClass("print");
 					$('#diary textarea').trigger("input");
+					$('#diary textarea').trigger("input");
+					$('#menuToggle INPUT').prop("checked", false);
 				});
 				$("#m_print").unbind("click").click(function() {
 					_ds.data.collect();

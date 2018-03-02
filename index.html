@@ -2,7 +2,9 @@
 <html>
 <head>
 <link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="css/ds.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="css/default.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="css/ds.css" type="text/css" id='stylesheet'
+	charset="utf-8" />
 <script src="js/jquery-1.7.2.min.js"></script>
 <script src="js/character.js"></script>
 <script src="js/GoldHandler.js"></script>
@@ -13,25 +15,32 @@
 </head>
 <body>
 	<div class='ds'>
-		<div class='menu'>
-			<div id='m_chars' title='Meine Characktere'></div>
-			<div id='m_file' title='Datei'></div>
-			<div id='m_werte' title='Werte'></div>
-			<div id='m_waffen' title='Waffen'></div>
-			<div id='m_defense' title='R&uuml;stung'></div>
-			<div id='m_spells' title='Zauber'></div>
-			<div id='m_talents' title='Talente'></div>
-			<div id='m_begleiter' title='Begleiter'></div>
-			<div id='m_inventar' title='Inventar'></div>
-			<div id='m_probs' title='Proben'></div>
-			<div id='m_gold' title='Geld'></div>
-			<div id='m_diary' title='Tagebuch'></div>
-			<div id='m_settings' title='Einstellungen'></div>
-			<div id='m_print' title='Druckversion'></div>
-			<span>...</span>
+		<div id="menuToggle">
+		    <input type="checkbox" />
+		    <span class='burger'></span>
+    		<span class='burger'></span>
+    		<span class='burger'></span>
+			<div id='menu' class='menu'>
+				<div id='m_chars' title='Meine Characktere'><span>Meine Characktere</span></div>
+				<div id='m_file' title='Datei'><span>Datei</span></div>
+				<div id='m_werte' title='Werte'><span>Werte</span></div>
+				<div id='m_waffen' title='Waffen'><span>Waffen</span></div>
+				<div id='m_defense' title='R&uuml;stung'><span>R&uuml;stung</span></div>
+				<div id='m_spells' title='Zauber'><span>Zauber</span></div>
+				<div id='m_talents' title='Talente'><span>Talente</span></div>
+				<div id='m_begleiter' title='Begleiter'><span>Begleiter</span></div>
+				<div id='m_inventar' title='Inventar'><span>Inventar</span></div>
+				<div id='m_probs' title='Proben'><span>Proben</span></div>
+				<div id='m_gold' title='Geld'><span>Geld</span></div>
+				<div id='m_diary' title='Tagebuch'><span>Tagebuch</span></div>
+				<div id='m_settings' title='Einstellungen'><span>Einstellungen</span></div>
+				<div id='m_print' title='Druckversion'><span>Drucken</span></div>
+				<span class='m_charname'>...</span>
+			</div>
+			<div class='m_charname'>...</div>
 		</div>
 		<div id='overlay' class='hidden'>
-		    <div id='chars'>
+			<div id='chars'>
 				<span class="headline">Meine Charaktere</span>
 				<table>
 					<tbody>
@@ -93,7 +102,8 @@
 										<td>
 											<table>
 												<tr>
-													<td class='small'><label for="ds_i_steckbrief_geschlecht">Geschlecht:</label></td>
+													<td class='small'><label
+														for="ds_i_steckbrief_geschlecht">Geschlecht:</label></td>
 													<td><input id="ds_i_steckbrief_geschlecht" /></td>
 												</tr>
 											</table>
@@ -101,7 +111,8 @@
 										<td>
 											<table>
 												<tr>
-													<td class='small'><label for="ds_i_steckbrief_geburtsort">Geburtsort:</label></td>
+													<td class='small'><label
+														for="ds_i_steckbrief_geburtsort">Geburtsort:</label></td>
 													<td><input id="ds_i_steckbrief_geburtsort" /></td>
 												</tr>
 											</table>
@@ -111,7 +122,8 @@
 										<td>
 											<table>
 												<tr>
-													<td class='small'><label for="ds_i_steckbrief_geburtstag">Geburtstag:</label></td>
+													<td class='small'><label
+														for="ds_i_steckbrief_geburtstag">Geburtstag:</label></td>
 													<td><input id="ds_i_steckbrief_geburtstag" /></td>
 												</tr>
 											</table>
@@ -147,7 +159,8 @@
 										<td>
 											<table>
 												<tr>
-													<td class='small'><label for="ds_i_steckbrief_haarfarbe">Haarfarbe:</label></td>
+													<td class='small'><label
+														for="ds_i_steckbrief_haarfarbe">Haarfarbe:</label></td>
 													<td><input id="ds_i_steckbrief_haarfarbe" /></td>
 												</tr>
 											</table>
@@ -155,7 +168,8 @@
 										<td>
 											<table>
 												<tr>
-													<td class='small'><label for="ds_i_steckbrief_augenfarbe">Augenfarbe:</label></td>
+													<td class='small'><label
+														for="ds_i_steckbrief_augenfarbe">Augenfarbe:</label></td>
 													<td><input id="ds_i_steckbrief_augenfarbe" /></td>
 												</tr>
 											</table>
@@ -165,7 +179,8 @@
 										<td colspan=2>
 											<table>
 												<tr>
-													<td class='small'><label for="ds_i_steckbrief_besonderes">Besonderes:</label></td>
+													<td class='small'><label
+														for="ds_i_steckbrief_besonderes">Besonderes:</label></td>
 													<td><input id="ds_i_steckbrief_besonderes" /></td>
 												</tr>
 											</table>
@@ -175,7 +190,8 @@
 										<td colspan=2>
 											<table>
 												<tr>
-													<td class='small'><label for="ds_i_steckbrief_sprachen">Sprachen:</label></td>
+													<td class='small'><label
+														for="ds_i_steckbrief_sprachen">Sprachen:</label></td>
 													<td><input id="ds_i_steckbrief_sprachen" /></td>
 												</tr>
 											</table>
@@ -185,7 +201,8 @@
 										<td colspan=2>
 											<table>
 												<tr>
-													<td class='small'><label for="ds_i_steckbrief_schriftzeichen">Schriftzeichen:</label></td>
+													<td class='small'><label
+														for="ds_i_steckbrief_schriftzeichen">Schriftzeichen:</label></td>
 													<td><input id="ds_i_steckbrief_schriftzeichen" /></td>
 												</tr>
 											</table>
