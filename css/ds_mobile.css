@@ -177,7 +177,7 @@ body {
 	display: inline;
 }
 
-INPUT.newrow, INPUT.nr_chars {
+INPUT.newrow, INPUT.nr_chars, #chars TABLE INPUT {
 	width: 100%;
 	border: 1px solid black;
 	padding: 5px;
@@ -186,23 +186,152 @@ INPUT.newrow, INPUT.nr_chars {
 	background: lightgrey;
 }
 
+#chars TABLE TD {
+	font-size: 25px;
+}
+
+.file {
+	display: flex;
+	flex-direction: column;
+}
+
+.file .file_cell {
+	width: 100%;
+	order: 1000;
+	position: relative;
+	margin: 5px;
+}
+
+.file .file_cell INPUT,
+.file .file_cell SELECT {
+	width: 70%;
+    padding-left: 25%;
+    background: none;
+    border: 1px solid lightgrey;
+    font-family: calibri;
+	font-size: 16px;
+}
+
+.file .file_cell SPAN {
+	position: absolute;
+	top: 4px;
+	left: 5px;
+	color: black;
+}
+
+
+.file #ds_banner {
+	order: 1;
+	margin-top: 1em;
+	margin-bottom: 1.5em;
+	margin-left: 0;
+}
+
+.file #ds_banner IMG {
+	width: 90%;
+	margin-left: 5%;
+}
+
+.file #ds_i_player {
+	order: 2;
+}
+.file #ds_i_name {
+	order: 3;
+}
+.file #ds_i_volk {
+	order: 4;
+}
+.file #ds_i_volksfahigkeiten {
+	order: 5;
+}
+.file #ds_i_klasse {
+	order: 6;
+}
+.file #ds_i_heldenklasse {
+	order: 7;
+}
+
+.file #ds_stufe {
+	order: 8;
+}
+.file #ds_i_exp {
+	order: 9;
+}
+
+
+.file #ds_i_stufe,
+.file #ds_i_lp,
+.file #ds_i_tp {
+	width: 32%;
+	position: relative;
+	float: left;
+}
+
+.file #ds_i_stufe INPUT,
+.file #ds_i_lp INPUT,
+.file #ds_i_tp INPUT {
+	width: 61%;
+	padding-left: 34%;
+}
+
+.file #ds_i_volk INPUT {
+	display: none;
+}
+
+.file .file_cell SELECT {
+	width: 95%;
+}
+
+.file #ds_i_steckbrief {
+	color: black;
+	border: 1px solid lightgrey;
+	padding: 1%;
+	width: 93%;
+}
+
+.file #ds_i_steckbrief TD {
+	position: relative;
+}
+
+.file #ds_i_steckbrief INPUT {
+	padding-left: 40%;
+	width: 60%;
+}
+
+.file #ds_i_steckbrief INPUT#ds_i_steckbrief_besonderes,
+.file #ds_i_steckbrief INPUT#ds_i_steckbrief_sprachen,
+.file #ds_i_steckbrief INPUT#ds_i_steckbrief_schriftzeichen {
+	padding-left: 22%;
+	width: 78%;
+}
+
+
 #waffen THEAD TR,
 #defense THEAD TR,
 #spells THEAD TR,
-#talents THEAD TR {
+#talents THEAD TR,
+#inventar THEAD TR,
+#diary THEAD TR  {
 	display: none;
 }
 
 #waffen TBODY TR,
 #defense TBODY TR,
 #spells TBODY TR,
-#talents TBODY TR {
+#talents TBODY TR,
+#inventar TBODY TR,
+#diary TBODY TR {
 	display: block;
 	border: 1px solid black;
 	margin: 5px;
 	margin-bottom: 10px;
     padding: 5px;
     position: relative;
+}
+
+#inventar TBODY TD,
+#diary TBODY TD {
+	position: relative;
 }
 
 #waffen TBODY TR TD:nth-last-child(6),
@@ -233,24 +362,42 @@ INPUT.newrow, INPUT.nr_chars {
 	position: absolute;
 	top: 4px;
 	left: 5px;
-	color: darkgrey;
+	color: black;
 }
 
 #talents TBODY TR TD:nth-last-child(3)::before {
 	content: 'Stufe:';
 }
 
+#inventar TBODY TR TD:nth-last-child(2),
+#inventar TBODY TR TD:nth-last-child(3),
+#inventar TBODY TR TD:nth-last-child(4) {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+    margin-left: 1px;
+}
+
 #waffen TBODY TR TD:nth-last-child(6) INPUT,
 #defense TBODY TR TD:nth-last-child(4) INPUT,
 #spells TBODY TR TD:nth-last-child(6) INPUT,
 #talents TBODY TR TD:nth-last-child(5) INPUT,
-#talents TBODY TR TD:nth-last-child(3) INPUT {
+#talents TBODY TR TD:nth-last-child(3) INPUT,
+#inventar TBODY TR TD:nth-last-child(2) INPUT,
+#inventar TBODY TR TD:nth-last-child(3) INPUT,
+#inventar TBODY TR TD:nth-last-child(4) INPUT {
 	width: 80%;
     padding-left: 15%;
     background: none;
     border: 1px solid lightgrey;
     font-family: calibri;
 	font-size: 16px;
+}
+#inventar TBODY TR TD:nth-last-child(2) INPUT,
+#inventar TBODY TR TD:nth-last-child(3) INPUT,
+#inventar TBODY TR TD:nth-last-child(4) INPUT {
+	width: 75%;
+    padding-left: 20%;
 }
 
 #talents TBODY TR TD:nth-last-child(3) INPUT {
@@ -270,7 +417,7 @@ INPUT.newrow, INPUT.nr_chars {
 #waffen TBODY TR TD:nth-last-child(5)::before,
 #spells TBODY TR TD:nth-last-child(5)::before {
 	content: 'Nah:';
-	color: darkgrey;
+	color: black;
 	float: left;
 	margin-right: 1em;
 	margin-left: 2px;
@@ -304,7 +451,7 @@ INPUT.newrow, INPUT.nr_chars {
 #waffen TBODY TR TD:nth-last-child(4)::before,
 #spells TBODY TR TD:nth-last-child(4)::before {
 	content: 'Fern:';
-	color: darkgrey;
+	color: black;
 	float: left;
 	margin-right: 1em;
 	margin-left: 2px;
@@ -336,24 +483,51 @@ INPUT.newrow, INPUT.nr_chars {
 #waffen TBODY TR TD:nth-last-child(3)::before,
 #defense TBODY TR TD:nth-last-child(3)::before,
 #spells TBODY TR TD:nth-last-child(3)::before,
-#talents TBODY TR TD:nth-last-child(4)::before {
+#talents TBODY TR TD:nth-last-child(4)::before,
+#inventar TBODY TR TD:nth-last-child(2)::before,
+#inventar TBODY TR TD:nth-last-child(3)::before,
+#inventar TBODY TR TD:nth-last-child(4)::before,
+#diary TBODY TR TD:nth-last-child(2)::before {
 	content: 'Effekt:';
 	position: absolute;
 	top: 4px;
 	left: 5px;
-	color: darkgrey;
+	color: black;
+}
+#inventar TBODY TR TD:nth-last-child(2)::before {
+	content: "Besonderheit:"
+}
+
+#inventar TBODY TR TD:nth-last-child(3)::before {
+	content: "Wo gelagert?"
+}
+#inventar TBODY TR TD:nth-last-child(4)::before {
+	content: "Ausrüstung:"
+}
+
+#diary TBODY TR TD:nth-last-child(2)::before {
+	content: "Titel:"
 }
 
 #waffen TBODY TR TD:nth-last-child(3) INPUT,
 #defense TBODY TR TD:nth-last-child(3) INPUT,
 #spells TBODY TR TD:nth-last-child(3) INPUT,
-#talents TBODY TR TD:nth-last-child(4) INPUT {
+#talents TBODY TR TD:nth-last-child(4) INPUT,
+#diary TBODY TR TD:nth-last-child(2) INPUT,
+#diary TBODY TR TD:nth-last-child(2) TEXTAREA {
 	width: 80%;
     padding-left: 15%;
     background: none;
     border: 1px solid lightgrey;
     font-family: calibri;
 	font-size: 16px;
+}
+
+#diary TBODY TR TD:nth-last-child(2) TEXTAREA {
+	width: 95%;
+	padding-left: 0;
+	min-height: 5em;
+	resize:vertical;
 }
 
 #waffen TBODY TR TD:nth-last-child(2),
@@ -372,7 +546,7 @@ INPUT.newrow, INPUT.nr_chars {
 #spells TBODY TR TD:nth-last-child(2)::before,
 #talents TBODY TR TD:nth-last-child(2)::before {
 	content: 'Ausgerüsstet:';
-	color: darkgrey;
+	color: black;
 	float: left;
 	margin-right: 1em;
 	margin-left: 2px;
@@ -404,7 +578,9 @@ INPUT.newrow, INPUT.nr_chars {
 #waffen TBODY TR TD:nth-last-child(1),
 #defense TBODY TR TD:nth-last-child(1),
 #spells TBODY TR TD:nth-last-child(1),
-#talents TBODY TR TD:nth-last-child(1) {
+#talents TBODY TR TD:nth-last-child(1),
+#inventar TBODY TR TD:nth-last-child(1),
+#diary TBODY TR TD:nth-last-child(1) {
 	display: block;
 	position: absolute;
 	border: 1px solid lightgray;
@@ -429,4 +605,27 @@ INPUT.newrow, INPUT.nr_chars {
 
 #probs TABLE .outline {
 	text-align: center;	
+}
+
+.button {
+	margin: 0 0.2em 0 0.2em;
+	padding: 5px;
+	border: 1px solid black;
+	background-color: lightgrey;
+	text-align: center;
+	cursor: pointer;
+	font-size: 1em;
+	font-family: Calibri;
+}
+
+#m_print {
+	display: none;
+}
+
+#gold .minus, #gold .plus {
+	font-size: 0.5em;
+}
+
+#gold TABLE.t_calc input {
+	font-size: 1em;
 }

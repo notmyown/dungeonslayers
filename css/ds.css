@@ -341,69 +341,6 @@ TBODY input {
 	margin: 0;
 }
 
-#gold TABLE {
-	width: 80%;
-	height: 3em;
-	margin: auto;
-	margin-top: 0.5em;
-	border: 0;
-}
-
-#gold TABLE TD {
-	border: 0;
-	width: 33.3%;
-}
-
-#gold TABLE TD INPUT {
-	border: 0;
-	font-family: Woodstamp;
-	font-size: 3em;
-	text-align: center;
-	background: transparent;
-}
-
-#gold>TABLE {
-	background: none;
-	background-color: transparent;
-	background-image: url(../img/gold.png);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-	font-family: Woodstamp;
-	font-size: 3.5em;
-	text-align: center;
-	vertical-align: middle;
-}
-
-#gold>TABLE TBODY {
-	background: none;
-	background-color: transparent;
-}
-
-#gold TABLE.t_calc, #gold TABLE.t_calc tbody {
-	height: auto;
-	background-image: none;
-	font-size: 1.5em;
-}
-
-#gold TABLE.t_calc {
-	width: 80%;
-}
-
-#gold TABLE.t_calc input {
-	font-size: 2em;
-	border: 1px solid black;
-	width: 50%;
-}
-
-#gold TABLE.t_calc div {
-	cursor: pointer;
-	white-space: nowrap;
-}
-
-#gold TABLE.t_calc TD {
-	width: auto;
-}
-
 #file TABLE {
 	margin-top: 2em;
 }
@@ -454,36 +391,59 @@ TBODY input {
 	text-align: center;
 }
 
-#modal {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-color: rgba(0, 0, 0, 0.5);
-	display: table;
-	width: 100%;
-	height: 100%;
-}
-
-#modal>DIV {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.dialog {
-	width: 15em;
+.file .file_cell, .file .file_cell#ds_stufe DIV {
+	float: left;
+	width: 31%;
+	margin: .3em;
+	padding: 0px 2px;
+	background-color: #FAFAFA;
 	border: 1px solid black;
-	background: white;
-	margin-left: auto;
-	margin-right: auto;
+	font-size: 1.5em;
 }
 
-.dialog .before {
-	content: "X";
-	float: right;
-	margin: 5px;
-	cursor: pointer;
+.file .file_cell#ds_stufe DIV {
+	font-size: 1em;
+	width: 30%;
+	text-align: center;
+	margin: 0px 2% 0px 0px;
+	padding: 0px 0px 0px 1%;
+}
+.file .file_cell#ds_stufe INPUT {
+	text-align: center;
+}
+.file .file_cell#ds_stufe DIV#ds_i_tp {
+	margin-right:0
+}
+
+.file .file_cell#ds_banner,
+.file .file_cell#ds_stufe {
+	background: none;
+	border:none;
+}
+
+.file .file_cell#ds_i_player,
+.file .file_cell#ds_i_name {
+	margin-top: 1em;
+	margin-bottom:1em;
+}
+
+.file .file_cell INPUT {
+	width: 98%;
+	border: none;
+	background: none;
+}
+
+.file #ds_i_steckbrief {
+		width: 97%;
+}
+
+.file #ds_i_steckbrief #steckbrief{
+	font-size: 0.7em;
+			border: none;
+}
+
+.file #ds_i_steckbrief TD{
+	border: none;
 }
 
 .print  .ds {

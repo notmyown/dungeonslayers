@@ -49,170 +49,79 @@
 				</table>
 				<input class='nr_chars' type='button' value='Neuer Charakter' />
 			</div>
-			<div id='file'>
-				<table>
-					<tr>
-						<td class='big'><div id='ds_i_player'>
-								<span>Spieler:</span><input />
-							</div></td>
-						<td colspan=3 id='ds_banner' class='big'><img
-							src="./img/banner.png" /></td>
-						<td class='big'><div id='ds_i_name'>
-								<span>Charakter:</span><input />
-							</div></td>
-					</tr>
-					<tr>
-						<td class='big'><div id='ds_i_volk'>
-								<span>Volk:</span><input /> <select>
-									<option>Mensch</option>
-									<option>Zwerg</option>
-									<option>Elf</option>
-									<option>Gnom</option>
-									<option>Halbling</option>
-								</select>
-							</div></td>
-						<td class='small'><div id='ds_i_stufe'>
-								<input /><span>Stufe</span>
-							</div></td>
-						<td class='small'><div id='ds_i_lp'>
-								<input /><span>LP</span>
-							</div></td>
-						<td class='small'><div id='ds_i_tp'>
-								<input /><span>TP</span>
-							</div></td>
-						<td class='big'><div id='ds_i_klasse'>
-								<span>Klasse:</span><input />
-							</div></td>
-					</tr>
-					<tr>
-						<td class='big'><div id='ds_i_volksfahigkeiten'>
-								<span>Volksf&auml;higkeiten:</span><input />
-							</div></td>
-						<td colspan=3 class='big'><div id='ds_i_exp'>
-								<input /><span>Erfahrungspunkte</span>
-							</div></td>
-						<td class='big'><div id='ds_i_heldenklasse'>
-								<span>Heldenklasse:</span><input />
-							</div></td>
-					</tr>
-					<tr>
-						<td class='big' colspan=5><div id='ds_i_steckbrief'>
-								Steckbrief
-								<table id='steckbrief'>
+			<div id='file' class='file'>
+				<div class='file_cell' id='ds_i_player'><span>Spieler:</span><input /></div>
+				<div class='file_cell' id='ds_banner'><img	src="./img/banner.png" /></div>
+                <div class='file_cell' id='ds_i_name'><span>Charakter:</span><input /></div>
+                <div class='file_cell' id='ds_i_volk'><span>Volk:</span><input />
+                	 <select>
+							<option>Mensch</option>
+							<option>Zwerg</option>
+							<option>Elf</option>
+							<option>Gnom</option>
+							<option>Halbling</option>
+					</select>
+				</div>
+				<div class='file_cell' id='ds_stufe'>
+ 				  <div id='ds_i_stufe'><input /><span>Stufe</span></div>
+				  <div id='ds_i_lp'><input /><span>LP</span></div>
+				  <div id='ds_i_tp'><input /><span>TP</span></div>
+				</div>
+				<div class='file_cell' id='ds_i_klasse'><span>Klasse:</span><input /></div>
+				<div class='file_cell' id='ds_i_volksfahigkeiten'><span>Volksf&auml;higkeiten:</span><input /></div>
+				<div class='file_cell' id='ds_i_exp'><input /><span>Erfahrungspunkte</span></div>
+				<div class='file_cell' id='ds_i_heldenklasse'><span>Heldenklasse:</span><input /></div>
+				<div class='file_cell' id='ds_i_steckbrief'>Steckbrief
+							<table id='steckbrief'>
 									<tr>
 										<td>
-											<table>
-												<tr>
-													<td class='small'><label
-														for="ds_i_steckbrief_geschlecht">Geschlecht:</label></td>
-													<td><input id="ds_i_steckbrief_geschlecht" /></td>
-												</tr>
-											</table>
+											<span>Geschlecht:</span><input id="ds_i_steckbrief_geschlecht" />
 										</td>
 										<td>
-											<table>
-												<tr>
-													<td class='small'><label
-														for="ds_i_steckbrief_geburtsort">Geburtsort:</label></td>
-													<td><input id="ds_i_steckbrief_geburtsort" /></td>
-												</tr>
-											</table>
+											<span>Geburtsort:</span><input id="ds_i_steckbrief_geburtsort" />
 										</td>
 									</tr>
 									<tr>
 										<td>
-											<table>
-												<tr>
-													<td class='small'><label
-														for="ds_i_steckbrief_geburtstag">Geburtstag:</label></td>
-													<td><input id="ds_i_steckbrief_geburtstag" /></td>
-												</tr>
-											</table>
+											<span>Geburtstag:</span><input id="ds_i_steckbrief_geburtstag" />
 										</td>
 										<td>
-											<table>
-												<tr>
-													<td class='small'><label for="ds_i_steckbrief_alter">Alter:</label></td>
-													<td><input id="ds_i_steckbrief_alter" /></td>
-												</tr>
-											</table>
+											<span>Alter:</span><input id="ds_i_steckbrief_alter" />
 										</td>
 									</tr>
 									<tr>
 										<td>
-											<table>
-												<tr>
-													<td class='small'><label for="ds_i_steckbrief_grosse">Gr&ouml;sse:</label></td>
-													<td><input id="ds_i_steckbrief_grosse" /></td>
-												</tr>
-											</table>
+											<span>Gr&ouml;sse:</span><input id="ds_i_steckbrief_grosse" />
 										</td>
 										<td>
-											<table>
-												<tr>
-													<td class='small'><label for="ds_i_steckbrief_gewicht">Gewicht:</label></td>
-													<td><input id="ds_i_steckbrief_gewicht" /></td>
-												</tr>
-											</table>
+											<span>Gewicht:</span><input id="ds_i_steckbrief_gewicht" />
 										</td>
 									</tr>
 									<tr>
 										<td>
-											<table>
-												<tr>
-													<td class='small'><label
-														for="ds_i_steckbrief_haarfarbe">Haarfarbe:</label></td>
-													<td><input id="ds_i_steckbrief_haarfarbe" /></td>
-												</tr>
-											</table>
+											<span>Haarfarbe:</span><input id="ds_i_steckbrief_haarfarbe" />
 										</td>
 										<td>
-											<table>
-												<tr>
-													<td class='small'><label
-														for="ds_i_steckbrief_augenfarbe">Augenfarbe:</label></td>
-													<td><input id="ds_i_steckbrief_augenfarbe" /></td>
-												</tr>
-											</table>
+											<span>Augenfarbe:</span><input id="ds_i_steckbrief_augenfarbe" />
 										</td>
 									</tr>
 									<tr>
 										<td colspan=2>
-											<table>
-												<tr>
-													<td class='small'><label
-														for="ds_i_steckbrief_besonderes">Besonderes:</label></td>
-													<td><input id="ds_i_steckbrief_besonderes" /></td>
-												</tr>
-											</table>
+											<span>Besonderes:</span><input id="ds_i_steckbrief_besonderes" />
 										</td>
 									</tr>
 									<tr>
 										<td colspan=2>
-											<table>
-												<tr>
-													<td class='small'><label
-														for="ds_i_steckbrief_sprachen">Sprachen:</label></td>
-													<td><input id="ds_i_steckbrief_sprachen" /></td>
-												</tr>
-											</table>
+											<span>Sprachen:</span><input id="ds_i_steckbrief_sprachen" />
 										</td>
 									</tr>
 									<tr>
 										<td colspan=2>
-											<table>
-												<tr>
-													<td class='small'><label
-														for="ds_i_steckbrief_schriftzeichen">Schriftzeichen:</label></td>
-													<td><input id="ds_i_steckbrief_schriftzeichen" /></td>
-												</tr>
-											</table>
+											<span>Schriftzeichen:</span><input id="ds_i_steckbrief_schriftzeichen" />
 										</td>
 									</tr>
 								</table>
-							</div></td>
-					</tr>
-				</table>
+				</div>
 			</div>
 			<div id='werte'>
 				<div id='grundwerte'>
