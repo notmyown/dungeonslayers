@@ -53,6 +53,10 @@ function DataHandler(_ds) {
 			localStorage.setItem("nmo.dungeonslayers.characters", text);
 		},
 		import : function() {
+			if (typeof window.FileReader !== 'function') {
+			      alert("The file API isn't supported on this browser yet.");
+			      return;
+			}
 			var inputElement = document.createElement("input");
 			// Set its type to file
 			inputElement.type = "file";
@@ -63,7 +67,9 @@ function DataHandler(_ds) {
 			// set onchange event to call callback when user has selected file
 			inputElement.addEventListener("change", function(evt) {
 				var files = evt.target.files; // FileList object
-
+				if (!files || !files[0]) {
+					alert("No files uploaded");
+				}
 				// Loop through the FileList and render image files as
 				// thumbnails.
 				for (var i = 0, f; f = files[i]; i++) {
