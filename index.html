@@ -617,6 +617,11 @@
 									Importieren</div>
 							</td>
 						</tr>
+						<tr>
+							<td>
+								<div class='log'></div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
@@ -642,6 +647,9 @@
 		$(document).ready(function() {
 			ds = new DS();
 		});
+		window.onerror = function(msg, url, line, col, error) {
+		    _ds.data.log(msg, "ERROR: ");
+		};
 	</script>
 </body>
 </html>

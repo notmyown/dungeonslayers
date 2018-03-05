@@ -1,8 +1,14 @@
 function DataHandler(_ds) {
 	this.data = {
 		characters : [],
-
+		log : function(input, label) {
+			if (label) {
+				$("#settings .log").append("<span style='color: red;'>" + label + "</span>");
+			}
+			$("#settings .log").append(""+ input).append("<br/>");
+		},
 		load : function data_load(input) {
+			_ds.data.log(input, "Load Input: ");
 			var isMobile = false; // initiate as false
 			// device detection
 			if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
@@ -38,6 +44,7 @@ function DataHandler(_ds) {
 			}
 			_ds.character = _ds.data.characters[idx];
 			_ds.data.index = idx;
+			_ds.data.log(_ds.character, "Loaded:");
 			_ds.html.init();
 			_ds.stats.init();
 			$(".ds #menuToggle .m_charname").text(_ds.character.name + " (" + _ds.character.stufe + ") " + _ds.character.volk + " - " + _ds.character.klasse);
@@ -67,18 +74,20 @@ function DataHandler(_ds) {
 			// set onchange event to call callback when user has selected file
 			inputElement.addEventListener("change", function(evt) {
 				var files = evt.target.files; // FileList object
+				_ds.data.log(files, "Files: ");
 				if (!files || !files[0]) {
 					alert("No files uploaded");
 				}
 				// Loop through the FileList and render image files as
 				// thumbnails.
 				for (var i = 0, f; f = files[i]; i++) {
-
+					_ds.data.log(f,"File: ");
 					var reader = new FileReader();
 
 					// Closure to capture the file information.
 					reader.onload = (function(theFile) {
 						return function(e) {
+							_ds.data.log(theFile,"File OnLoad: ");
 							_ds.data.load(e.target.result);
 						};
 					})(f);

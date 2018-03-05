@@ -127,3 +127,8 @@ LABEL.checkbox .checkmark:after {
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
+
+.log {
+	font-family: Arial;
+	font-size: 10px;
+}
