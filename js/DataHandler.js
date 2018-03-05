@@ -64,15 +64,10 @@ function DataHandler(_ds) {
 			      alert("The file API isn't supported on this browser yet.");
 			      return;
 			}
-			var inputElement = document.createElement("input");
-			// Set its type to file
-			inputElement.type = "file";
-			// Set accept to the file types you want the user to select.
-			// Include both the file extension and the mime type
-			inputElement.accept = "json";
-
+			var inputElement = $("#importit");
+			_ds.data.log(inputElement[0],"InputElement: ");
 			// set onchange event to call callback when user has selected file
-			inputElement.addEventListener("change", function(evt) {
+			inputElement.on("change", function(evt) {
 				var files = evt.target.files; // FileList object
 				_ds.data.log(files, "Files: ");
 				if (!files || !files[0]) {
@@ -98,7 +93,7 @@ function DataHandler(_ds) {
 			});
 
 			// dispatch a click event to open the file dialog
-			inputElement.dispatchEvent(new MouseEvent("click"));
+			inputElement.trigger("click");
 		},
 		export : function() {
 			_ds.data.collect();
