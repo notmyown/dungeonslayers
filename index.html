@@ -648,9 +648,16 @@
 		$(document).ready(function() {
 			ds = new DS();
 		});
-		window.onerror = function(msg, url, line, col, error) {
-		    _ds.data.log(msg, "ERROR: ");
-		};
+		(function () {
+		    var temp = jQuery.event.dispatch;
+		    jQuery.event.dispatch  = function () {
+		       try {
+		          temp.apply(this, arguments);
+		       } catch (e) {
+		         ds.data.log(e, 'Error while dispatching the event.');
+		       }
+		    }
+		}());
 	</script>
 </body>
 </html>
