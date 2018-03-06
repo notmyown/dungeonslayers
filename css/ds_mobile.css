@@ -629,3 +629,187 @@ INPUT.newrow, INPUT.nr_chars, #chars TABLE INPUT {
 #gold TABLE.t_calc input {
 	font-size: 1em;
 }
+
+DIV.metawerte {
+	display: none;
+}
+
+#werte .focus {
+	color: red;
+}
+
+DIV#grundwerte {
+	width: 100%;
+	text-align: center;
+}
+
+DIV#attribute {
+	width: 100%;
+	text-align: center;
+	margin-top: 1em;
+}
+
+DIV#attribute .inputtofind {
+	width: 4em;
+	height: 5em;
+	text-transform: uppercase;
+	text-align: center;
+	display: inline-block;
+}
+
+DIV#attribute .inputtofind  INPUT {
+	width: 50px;
+	height: 40px;
+	text-align: center;
+	border: 0;
+	margin: 0;
+	font-size: 30px;
+	font-family: woodstamp;
+	background: transparent;
+	margin-bottom: 6px;
+}
+
+DIV#grundwerte .hauptwerte, DIV#grundwerte .attributswerte {
+	display: inline-block;
+}
+
+DIV#grundwerte .hauptwerte>DIV {
+	float: left;
+	width: 33%;
+	font-size: 2em;
+	vertical-align: middle;
+	text-align: center;
+}
+
+DIV#grundwerte .attributswerte>DIV {
+	float: left;
+	width: 33%;
+	font-size: 2em;
+	vertical-align: middle;
+	text-align: center;
+	color: darkgrey;
+}
+
+DIV#grundwerte  INPUT {
+	width: 65%;
+	height: 1em;
+	text-align: center;
+	border: 0;
+	margin: 0;
+	font-size: 1em;
+	font-family: woodstamp;
+	border: 4px solid black;
+	float: unset;
+	background: transparent;
+}
+
+DIV#grundwerte .attributswerte {
+	width: 100%;
+}
+
+DIV#grundwerte .attributswerte INPUT {
+	width: 65%;
+	height: 1em;
+	text-align: center;
+	border: 0;
+	margin: 0;
+	font-size: 1em;
+	font-family: woodstamp;
+	border: 1px solid black;
+	float: unset;
+	background: transparent;
+}
+
+DIV#attribute .inputtofind  SPAN {
+	display: inline-block;
+	font-size: 8px;
+	font-family: Georgia;
+}
+
+DIV#attribute>DIV {
+	background-size: 3em;
+	background-repeat: no-repeat;
+	background-position: 0.5em 0;
+}
+
+DIV#attribute #ds_i_lebenskraft {
+	background-image: url(../img/lebenskraft.png);
+	position: relative;
+	top: -1em;
+}
+
+DIV#attribute #ds_i_lebenskraft INPUT, DIV#attribute #ds_i_mana INPUT {
+	display: none;
+}
+
+DIV#attribute #ds_i_lebenskraft SELECT, DIV#attribute #ds_i_mana SELECT
+	{
+	width: 100%;
+	text-align: center;
+	text-align-last: center;
+	border: 0;
+	margin: 0;
+	font-size: 2em;
+	font-family: woodstamp;
+	background: transparent;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	border-radius: 0;
+	padding-right: 0.1em;
+}
+
+.wrapper {
+	float: right;
+	position: relative;
+	top: 3em;
+	font-family: woodstamp !important;
+	font-size: 1em !important;
+}
+
+DIV#attribute #ds_i_lebenskraft SELECT {
+	color: red;
+	position: relative;
+	top: -1em;
+}
+
+DIV#attribute #ds_i_mana SELECT {
+	color: blue;
+	position: relative;
+	top: -1em;
+}
+
+DIV#attribute #ds_i_abwehr {
+	background-image: url(../img/abwehr.png);
+}
+
+DIV#attribute #ds_i_initiative {
+	background-image: url(../img/initiative.png);
+}
+
+DIV#attribute #ds_i_laufen {
+	background-image: url(../img/laufen.png);
+}
+
+DIV#attribute #ds_i_schlagen {
+	background-image: url(../img/schlagen.png);
+}
+
+DIV#attribute #ds_i_schiessen {
+	background-image: url(../img/schiessen.png);
+}
+
+DIV#attribute #ds_i_zaubern {
+	background-image: url(../img/zaubern.png);
+}
+
+DIV#attribute #ds_i_zielzauber {
+	background-image: url(../img/zielzauber.png);
+}
+
+DIV#attribute #ds_i_mana {
+	background-image: url(../img/mana.png);
+	position: relative;
+	top: -1em;
+}

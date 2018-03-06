@@ -109,6 +109,16 @@ function StatsHandler(_ds) {
                                 Number($('#ds_i_schiessen input').val())
                                     + (Number(plus[1]) * multiply));
                           }
+                        } else if (plus[0].trim() == 'Lebenskraft') {
+                        	var add = (Number(plus[1]) * multiply);
+                        	var current = Number($('#ds_i_lebenskraft input').val());
+                        	$('#ds_i_lebenskraft input').val(current + add);
+                        	$('#ds_i_lebenskraft input').trigger("change");
+                        } else if (plus[0].trim() == 'Mana') {
+                        	var add = (Number(plus[1]) * multiply);
+                        	var current = Number($('#ds_i_mana input').val());
+                        	$('#ds_i_mana input').val(current + add);
+                        	$('#ds_i_mana input').trigger("change");
                         } else {
                           $('div.inputtofind').each(
                               function() {

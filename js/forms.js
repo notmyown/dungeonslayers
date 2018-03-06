@@ -4,7 +4,7 @@
   // this.character.init("Olwil", 2, 4,7,8,0,1,0,2,5,6);
   // this.character.print();
   this.pre = [ 'Körper', 'Agilität', 'Geist', 'Stärke', 'Bewegung', 'Verstand',
-      'Härte', 'Geschick', 'Aura', 'Panzerung' ];
+      'Härte', 'Geschick', 'Aura', 'Panzerung'];
 
   this.gold = (new GoldHandler(this)).gold;
   this.data = (new DataHandler(this)).data;

@@ -248,34 +248,6 @@ DIV#attribute #ds_i_mana SELECT {
 	top: -1em;
 }
 
-DIV#attribute #ds_i_abwehr {
-	background-image: url(../img/abwehr.png);
-}
-
-DIV#attribute #ds_i_initiative {
-	background-image: url(../img/initiative.png);
-}
-
-DIV#attribute #ds_i_laufen {
-	background-image: url(../img/laufen.png);
-}
-
-DIV#attribute #ds_i_schlagen {
-	background-image: url(../img/schlagen.png);
-}
-
-DIV#attribute #ds_i_schiessen {
-	background-image: url(../img/schiessen.png);
-}
-
-DIV#attribute #ds_i_zaubern {
-	background-image: url(../img/zaubern.png);
-}
-
-DIV#attribute #ds_i_zielzauber {
-	background-image: url(../img/zielzauber.png);
-}
-
 DIV#attribute #ds_i_mana {
 	background-image: url(../img/mana.png);
 	position: relative;
@@ -563,4 +535,8 @@ INPUT.newrow, INPUT.nr_chars {
 
 INPUT.nr_chars {
 	width: 9em;
+}
+
+#werte .headline {
+	display: none;
 }
