@@ -559,6 +559,9 @@
 			ds = new DS();
 		});
 		(function () {
+			if (screen && screen.orientation) {
+				screen.orientation.lock('portrait');
+			}
 		    var temp = jQuery.event.dispatch;
 		    jQuery.event.dispatch  = function () {
 		       try {
