@@ -311,7 +311,8 @@ INPUT.newrow, INPUT.nr_chars, #chars TABLE INPUT {
 #spells THEAD TR,
 #talents THEAD TR,
 #inventar THEAD TR,
-#diary THEAD TR  {
+#diary THEAD TR,
+#begleiter THEAD TR  {
 	display: none;
 }
 
@@ -320,13 +321,18 @@ INPUT.newrow, INPUT.nr_chars, #chars TABLE INPUT {
 #spells TBODY TR,
 #talents TBODY TR,
 #inventar TBODY TR,
-#diary TBODY TR {
+#diary TBODY TR,
+#begleiter TBODY TR {
 	display: block;
 	border: 1px solid black;
 	margin: 5px;
 	margin-bottom: 10px;
     padding: 5px;
     position: relative;
+}
+
+#begleiter TBODY TR {
+	display: inline-block;
 }
 
 #inventar TBODY TD,
@@ -338,7 +344,9 @@ INPUT.newrow, INPUT.nr_chars, #chars TABLE INPUT {
 #defense TBODY TR TD:nth-last-child(4),
 #spells TBODY TR TD:nth-last-child(6),
 #talents TBODY TR TD:nth-last-child(5),
-#talents TBODY TR TD:nth-last-child(3) {
+#talents TBODY TR TD:nth-last-child(3),
+#begleiter TBODY TR TD:nth-child(1),
+#begleiter TBODY TR TD:nth-child(2) {
 	display: block;
 	position: relative;
 }
@@ -357,7 +365,9 @@ INPUT.newrow, INPUT.nr_chars, #chars TABLE INPUT {
 #defense TBODY TR TD:nth-last-child(4)::before,
 #spells TBODY TR TD:nth-last-child(6)::before,
 #talents TBODY TR TD:nth-last-child(5)::before,
-#talents TBODY TR TD:nth-last-child(3)::before {
+#talents TBODY TR TD:nth-last-child(3)::before,
+#begleiter TBODY TR TD:nth-child(1)::before,
+#begleiter TBODY TR TD:nth-child(2)::before {
 	content: 'Name:';
 	position: absolute;
 	top: 4px;
@@ -367,6 +377,10 @@ INPUT.newrow, INPUT.nr_chars, #chars TABLE INPUT {
 
 #talents TBODY TR TD:nth-last-child(3)::before {
 	content: 'Stufe:';
+}
+
+#begleiter TBODY TR TD:nth-child(2)::before {
+	content: 'Art:'
 }
 
 #inventar TBODY TR TD:nth-last-child(2),
@@ -385,7 +399,9 @@ INPUT.newrow, INPUT.nr_chars, #chars TABLE INPUT {
 #talents TBODY TR TD:nth-last-child(3) INPUT,
 #inventar TBODY TR TD:nth-last-child(2) INPUT,
 #inventar TBODY TR TD:nth-last-child(3) INPUT,
-#inventar TBODY TR TD:nth-last-child(4) INPUT {
+#inventar TBODY TR TD:nth-last-child(4) INPUT,
+#begleiter TBODY TR TD:nth-child(1) INPUT,
+#begleiter TBODY TR TD:nth-child(2) INPUT {
 	width: 80%;
     padding-left: 15%;
     background: none;
@@ -580,7 +596,8 @@ INPUT.newrow, INPUT.nr_chars, #chars TABLE INPUT {
 #spells TBODY TR TD:nth-last-child(1),
 #talents TBODY TR TD:nth-last-child(1),
 #inventar TBODY TR TD:nth-last-child(1),
-#diary TBODY TR TD:nth-last-child(1) {
+#diary TBODY TR TD:nth-last-child(1),
+#begleiter TBODY TR TD:nth-last-child(1) {
 	display: block;
 	position: absolute;
 	border: 1px solid lightgray;
@@ -591,6 +608,131 @@ INPUT.newrow, INPUT.nr_chars, #chars TABLE INPUT {
 	height: 20px;
 	color: red;
 	cursor: pointer;
+}
+
+#begleiter TBODY TR TD:nth-child(3),
+#begleiter TBODY TR TD:nth-child(4),
+#begleiter TBODY TR TD:nth-child(5),
+#begleiter TBODY TR TD:nth-child(6),
+#begleiter TBODY TR TD:nth-child(7),
+#begleiter TBODY TR TD:nth-child(8),
+#begleiter TBODY TR TD:nth-child(9),
+#begleiter TBODY TR TD:nth-child(10),
+#begleiter TBODY TR TD:nth-child(11){
+	width: 31%;
+	display: block;
+	float: left;
+	position: relative;
+}
+
+#begleiter TBODY TR TD:nth-child(12),
+#begleiter TBODY TR TD:nth-child(13),
+#begleiter TBODY TR TD:nth-child(14),
+#begleiter TBODY TR TD:nth-child(15),
+#begleiter TBODY TR TD:nth-child(16),
+#begleiter TBODY TR TD:nth-child(17),
+#begleiter TBODY TR TD:nth-child(18),
+#begleiter TBODY TR TD:nth-child(19){
+	width: 10%;
+	display: block;
+	float: left;
+	padding-left: 1%;
+}
+
+
+#begleiter TBODY TR TD:nth-child(3)::before,
+#begleiter TBODY TR TD:nth-child(4)::before,
+#begleiter TBODY TR TD:nth-child(5)::before,
+#begleiter TBODY TR TD:nth-child(6)::before,
+#begleiter TBODY TR TD:nth-child(7)::before,
+#begleiter TBODY TR TD:nth-child(8)::before,
+#begleiter TBODY TR TD:nth-child(9)::before,
+#begleiter TBODY TR TD:nth-child(10)::before,
+#begleiter TBODY TR TD:nth-child(11)::before {
+	position: absolute;
+	top: 4px;
+	left: 5px;
+	color: black;
+}
+
+#begleiter TBODY TR TD:nth-child(3)::before {
+	content: 'Kör:';
+}
+#begleiter TBODY TR TD:nth-child(4)::before {
+	content: 'Agi:';
+}
+#begleiter TBODY TR TD:nth-child(5)::before {
+	content: 'Gei:';
+}
+#begleiter TBODY TR TD:nth-child(6)::before {
+	content: 'St:';
+}
+#begleiter TBODY TR TD:nth-child(7)::before {
+	content: 'Hä:';
+}
+#begleiter TBODY TR TD:nth-child(8)::before {
+	content: 'Be:';
+}
+#begleiter TBODY TR TD:nth-child(9)::before {
+	content: 'Ge:';
+}
+#begleiter TBODY TR TD:nth-child(10)::before {
+	content: 'Ve:';
+}
+#begleiter TBODY TR TD:nth-child(11)::before {
+	content: 'Au:';
+}
+
+#begleiter TBODY TR TD:nth-child(12) INPUT,
+#begleiter TBODY TR TD:nth-child(13) INPUT,
+#begleiter TBODY TR TD:nth-child(14) INPUT,
+#begleiter TBODY TR TD:nth-child(15) INPUT,
+#begleiter TBODY TR TD:nth-child(16) INPUT,
+#begleiter TBODY TR TD:nth-child(17) INPUT,
+#begleiter TBODY TR TD:nth-child(18) INPUT,
+#begleiter TBODY TR TD:nth-child(19) INPUT{
+	border: none;
+	background-repeat: no-repeat;
+	background-size: contain;
+	text-align: center;
+	padding: 0;
+	width: 100%;
+	background-position: center;
+	font-size: 1.5em;
+}
+
+#begleiter TBODY TR TD:nth-child(12) INPUT {
+	background-image: url('../img/lebenskraft.png');
+}
+#begleiter TBODY TR TD:nth-child(13) INPUT {
+	background-image: url('../img/abwehr.png');
+}
+#begleiter TBODY TR TD:nth-child(14) INPUT {
+	background-image: url('../img/initiative.png');
+}
+#begleiter TBODY TR TD:nth-child(15) INPUT {
+	background-image: url('../img/laufen.png');
+}
+#begleiter TBODY TR TD:nth-child(16) INPUT {
+	background-image: url('../img/schlagen.png');
+}
+#begleiter TBODY TR TD:nth-child(17) INPUT {
+	background-image: url('../img/schiessen.png');
+}
+#begleiter TBODY TR TD:nth-child(18) INPUT {
+	background-image: url('../img/zaubern.png');
+}
+#begleiter TBODY TR TD:nth-child(19) INPUT {
+	background-image: url('../img/zielzauber.png');
+}
+
+#begleiter TBODY TR TD INPUT {
+	width: 65%;
+    padding-left: 30%;
+    background: none;
+    border: 1px solid lightgrey;
+    font-family: calibri;
+	font-size: 16px;
 }
 
 #probs TABLE {
